@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import ActCard from "./ActCard";
+
 import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({
@@ -44,7 +45,8 @@ function Program({ newArray, days }) {
             .filter((act) => act.scene === "Midgard" && act.day === selectedDay)
             .map((act) => (
               <ActCard
-                src={act.logo}
+                slug={act.slug}
+              src={act.logo}
                 key={act.name}
                 name={act.name}
                 genre={act.genre}
