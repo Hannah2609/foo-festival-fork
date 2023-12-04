@@ -3,7 +3,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-function Band() {
+
+function Singlepage() {
   const [band, setBand] = useState([]);
   const [program, setProgram] = useState([]);
 
@@ -96,4 +97,4 @@ function Band() {
   );
 }
 
-export default Band;
+export default Singlepage;

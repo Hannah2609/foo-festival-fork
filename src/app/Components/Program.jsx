@@ -1,6 +1,7 @@
 import React from "react";
 import ActCard from "./ActCard";
 
+
 import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({
@@ -19,6 +20,7 @@ function Program({ newArray }) {
           .filter((act) => act.scene === "Midgard")
           .map((act) => (
             <ActCard
+              slug={act.slug}
               src={act.logo}
               key={act.name}
               name={act.name}
