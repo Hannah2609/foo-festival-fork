@@ -7,30 +7,39 @@ function Band() {
   const [band, setBand] = useState([]);
   const [program, setProgram] = useState([]);
 
-    useEffect(() => {
-    const fetchBandInfo = fetch("http://localhost:8080/bands/a-perfect-circle").then((res) => res.json());
-    const fetchProgramInfo = fetch("http://localhost:8080/schedule/").then((res) => res.json());
+  useEffect(() => {
+    const fetchBandInfo = fetch(
+      "http://localhost:8080/bands/tool"
+    ).then((res) => res.json());
+    const fetchProgramInfo = fetch("http://localhost:8080/schedule/").then(
+      (res) => res.json()
+    );
 
-
-   Promise.all([fetchBandInfo, fetchProgramInfo])
-      .then(([bandData, programData]) => {
+    Promise.all([fetchBandInfo, fetchProgramInfo]).then(
+      ([bandData, programData]) => {
         setBand(bandData);
         setProgram(programData);
-      });
-        }, []);
+      }
+    );
+  }, []);
 
-
-//   useEffect(() => {
-//     fetch("http://localhost:8080/bands/a-perfect-circle")
-//       .then((res) => res.json())
-//       .then((data) => {
-//         setBand(data);
-//       });
-
+  //   useEffect(() => {
+  //     fetch("http://localhost:8080/bands/a-perfect-circle")
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setBand(data);
+  //       });
 
   return (
     <>
-      {/* <Image src={band.logo} className="aspect-square object-contain mx-auto" width={300} height={300} alt="product image" /> */}
+      {/* hvis billedet starter med http så skal den blot skrive det ind i scr, hvis ikke skal man sætte billedestien som "link${band.logo}" */}
+      <Image
+        src={`https://robust-ionized-tartan.glitch.me/bands/${band.logo}`}
+        className="aspect-square object-contain mx-auto"
+        width={1200}
+        height={300}
+        alt="product image"
+      />
       <div>
         <h3 className="text-center text-fooYellow-200">{band.genre}</h3>
         <h1 className="text-center text-4xl">{band.name}</h1>
@@ -69,7 +78,10 @@ function Band() {
         </div>
         <article>
           <p>{band.bio}</p>
-          <p className="text-xs text-fooGrey-200 mt-2">Foto: {band.logoCredits}</p>
+          {/* if band.logoCredits er = nul så return ingenting ellers: */}
+          <p className="text-xs text-fooGrey-200 mt-2">
+            Foto: {band.logoCredits}
+          </p>
         </article>
       </section>
     </>
