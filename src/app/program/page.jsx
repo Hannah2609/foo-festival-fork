@@ -39,8 +39,12 @@ async function ProgramPage() {
 
   return (
     <>
-      <h1 className={`${bebasNeue.className}`}>Program</h1>
-      <Program newArray={merged} />
+      <h1
+        className={`text-6xl md:text-7xl lg:text-8xl xl:text-9xl ${bebasNeue.className} text-center text-fooYellow-200 mt-8`}
+      >
+        Program
+      </h1>
+      <Program newArray={merged} days={days} />
     </>
   );
 }
