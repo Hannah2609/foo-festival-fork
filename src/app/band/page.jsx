@@ -5,14 +5,28 @@ import Image from "next/image";
 
 function Band() {
   const [band, setBand] = useState([]);
+  const [program, setProgram] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:8080/bands/a-perfect-circle")
-      .then((res) => res.json())
-      .then((data) => {
-        setBand(data);
+    useEffect(() => {
+    const fetchBandInfo = fetch("http://localhost:8080/bands/a-perfect-circle").then((res) => res.json());
+    const fetchProgramInfo = fetch("http://localhost:8080/schedule/").then((res) => res.json());
+
+
+   Promise.all([fetchBandInfo, fetchProgramInfo])
+      .then(([bandData, programData]) => {
+        setBand(bandData);
+        setProgram(programData);
       });
-  }, []);
+        }, []);
+
+
+//   useEffect(() => {
+//     fetch("http://localhost:8080/bands/a-perfect-circle")
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setBand(data);
+//       });
+
 
   return (
     <>
@@ -22,12 +36,30 @@ function Band() {
         <h1 className="text-center text-4xl">{band.name}</h1>
       </div>
 
-      <section className="grid sm:grid-cols-2 grid-cols-1 gap-4">
+      <section className="grid sm:grid-cols-2 grid-cols-1 gap-4 mt-4">
         <div>
-          <div></div>
-          <div>
-            <h2>Medlemmer</h2>
-            <p>{band.members}</p>
+          <div className="flex items-start gap-2">
+            <div>
+              <Image src="/musik.svg" width={40} height={40} alt="musik ikon" />
+            </div>
+            <div>
+              <h2>Midgaard</h2>
+              <h2>08:20 - 09:00</h2>
+            </div>
+          </div>
+          <div className="flex items-start mt-10 gap-2">
+            <Image
+              src="/medlemmer.svg"
+              width={40}
+              height={40}
+              alt="musik ikon"
+            />
+            <div>
+              <h2>Medlemmer</h2>
+              <ul>
+                <li>{band.members}</li>
+              </ul>
+            </div>
             {/* <ol>
               {band.members.map((name, index) => (
                 <li key={`${band.slug}-${index}`}>{name}</li>
@@ -37,7 +69,7 @@ function Band() {
         </div>
         <article>
           <p>{band.bio}</p>
-          <p>{band.logoCredits}</p>
+          <p className="text-xs text-fooGrey-200 mt-2">Foto: {band.logoCredits}</p>
         </article>
       </section>
     </>
