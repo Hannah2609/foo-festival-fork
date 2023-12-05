@@ -16,7 +16,7 @@ function Lineup() {
 
   useEffect(() => {
 
-    fetch("http://localhost:8080/bands?_limit=10")
+    fetch("http://localhost:8080/bands")
       .then((res) => res.json())
       .then((data) => {
         setNames(data);

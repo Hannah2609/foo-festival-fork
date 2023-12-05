@@ -4,7 +4,6 @@ import Knap from "./Components/Knap";
 
 import { Bebas_Neue, Poppins } from "next/font/google";
 
-
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
   weight: "400",
@@ -32,15 +31,15 @@ export default function Home() {
           >
             Natur, kultur og god musik
           </h1>
+
           <button
             className={`text-center rounded-full bg-fooPink-900 p-2 px-10 text-base max-w-fit lg:p-4 lg:px-10 lg:text-lg transition ease-in-out hover:-translate-y-1 hover:scale-110  hover:bg-fooPink-800 duration-300 cursor-pointer	`}
           >
-            Køb billetter
+            <a href="/billetter">Køb billetter</a>
           </button>
         </section>
         <Lineup />
         <Knap />
-        
       </main>
       <Footer />
     </>
