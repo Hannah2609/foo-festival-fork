@@ -13,7 +13,9 @@
 
 body {
   background-color: var(--bg);
-  color: white;
-  margin: 5%;
+  color: #F5F5F5;
 }
 
+main {
+    margin: 5%;
+}

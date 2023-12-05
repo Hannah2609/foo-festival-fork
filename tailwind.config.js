@@ -20,6 +20,7 @@ module.exports = {
           700: "#0D5272",
         },
         fooPink: {
+          800: "#BD4551",
           900: "#EC5564",
         },
         fooYellow: {
@@ -29,7 +30,7 @@ module.exports = {
           900: "#FFFFFF",
         },
         fooGrey: {
-          200: "#D9D9D9",
+          200: "#D8D1CC",
           900: "#2B2B2B",
         },
         transparent: {
