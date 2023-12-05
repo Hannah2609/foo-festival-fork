@@ -27,11 +27,11 @@ function Program({ newArray, days }) {
   };
   return (
     <>
-      <div className="flex justify-center flex-wrap my-8 gap-8">
+      <div className="flex justify-center flex-wrap my-8 mb-20 gap-5">
         {days.map((day) => (
           <button
             key={day}
-            className={`text-2xl p-2 w-30 rounded-full bg-fooPink-900 ${bebasNeue.className} md:text-2xl p-4 w-40 lg:w-50 text-5xl `}
+            className={`text-2xl px-2 p-1 w-40 rounded-full bg-fooPink-900 ${bebasNeue.className} md:text-3xl md:p-2 lg:w-50 lg:text-4xl `}
             onClick={() => filterActsByDay(day)}
           >
             {day}
@@ -39,31 +39,17 @@ function Program({ newArray, days }) {
         ))}
       </div>
       <section>
-        <h3 className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5`}>Midgard</h3>
-        <div className="flex gap-6 overflow-y-scroll mb-8">
+        <h3
+          className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
+        >
+          Midgard
+        </h3>
+        <div className="flex gap-8 overflow-y-scroll mb-20 snap-mandatory snap-x">
           {newArray
             .filter((act) => act.scene === "Midgard" && act.day === selectedDay)
             .map((act) => (
               <ActCard
                 slug={act.slug}
-              src={act.logo}
-                key={act.name}
-                name={act.name}
-                genre={act.genre}
-                start={act.eventInfo.start}
-                end={act.eventInfo.end}
-              />
-            ))}
-        </div>
-
-        <h3 className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5`}>Vanaheim</h3>
-        <div className="flex gap-6 overflow-y-scroll mb-8">
-          {newArray
-            .filter(
-              (act) => act.scene === "Vanaheim" && act.day === selectedDay
-            )
-            .map((act) => (
-              <ActCard
                 src={act.logo}
                 key={act.name}
                 name={act.name}
@@ -74,14 +60,42 @@ function Program({ newArray, days }) {
             ))}
         </div>
 
-        <h3 className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5`}>Jotunheim</h3>
-        <div className="flex gap-6 overflow-y-scroll mb-8">
+        <h3
+          className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
+        >
+          Vanaheim
+        </h3>
+        <div className="flex gap-8 overflow-y-scroll mb-20 snap-mandatory snap-x">
+          {newArray
+            .filter(
+              (act) => act.scene === "Vanaheim" && act.day === selectedDay
+            )
+            .map((act) => (
+              <ActCard
+                slug={act.slug}
+                src={act.logo}
+                key={act.name}
+                name={act.name}
+                genre={act.genre}
+                start={act.eventInfo.start}
+                end={act.eventInfo.end}
+              />
+            ))}
+        </div>
+
+        <h3
+          className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
+        >
+          Jotunheim
+        </h3>
+        <div className="flex gap-8 overflow-y-scroll mb-20 snap-mandatory snap-x">
           {newArray
             .filter(
               (act) => act.scene === "Jotunheim" && act.day === selectedDay
             )
             .map((act) => (
               <ActCard
+                slug={act.slug}
                 src={act.logo}
                 key={act.name}
                 name={act.name}
