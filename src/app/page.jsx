@@ -25,7 +25,7 @@ export default function Home() {
       <main>
         <section className="flex flex-col justify-center items-center h-screen">
           <h2
-            className={`${bebasNeue.className} text-2xl text-fooYellow-200 text-center mb-4 text-fooPink-800`}
+            className={`${bebasNeue.className} text-2xl text-center mb-4 text-fooPink-800`}
           >
             FooFest
           </h2>
