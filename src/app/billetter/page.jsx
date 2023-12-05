@@ -23,7 +23,7 @@ function Billetter() {
         >
           Billetter
         </h1>
-        <section className="flex justify-center align-baseline gap-10 mt-20">
+        <section className="flex justify-center align-baseline gap-10 mt-20 mb-20">
           <Ticket />
           <VipTicket />
         </section>
