@@ -15,21 +15,25 @@ function Footer() {
       <div className="absolute inset-0 -z-10">
         <Image src="/footer.svg" layout="fill" objectFit="cover" alt="footer" />
       </div>
-      <div className="flex flex-col items-center mt-20">
-        <h2 className={`${bebasNeue.className} text-black`}>FØLG MED</h2>
-        <div className="flex">
+      <div className="flex flex-col items-center mt-40">
+        <h2 className={`text-5xl ${bebasNeue.className} lg:text-6xl xl:text-7xl p-8 text-black`}>FØLG MED</h2>
+        <div className="flex gap-6">
+          <a href="#">
           <Image
             src="/facebook.svg"
             width={65}
             height={65}
             alt="Facebook logo"
           />
+          </a>
+          <a href="#">
           <Image
             src="/instagram.svg"
             width={65}
             height={65}
             alt="Instagram logo"
           />
+          </a>
         </div>
       </div>
     </footer>
