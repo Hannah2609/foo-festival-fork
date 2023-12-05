@@ -13,7 +13,7 @@ function Knap() {
           alt="Årets program"
         />
         <p className={`text-xl uppercase`}>Se årets program</p>
-        <Image src={"pil.svg"} width={40} height={40} />
+        <Image src={"pil.svg"} width={40} height={40} alt="arrow"/>
       </button>
       <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-md">
         <Image
@@ -24,7 +24,7 @@ function Knap() {
           alt="Camping"
         />
         <p className={`text-xl uppercase`}>Camping på foofest</p>
-        <Image src={"pil.svg"} width={40} height={40} />
+        <Image src={"pil.svg"} width={40} height={40} alt="arrow" />
       </button>
       <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit">
         <Image
@@ -35,7 +35,7 @@ function Knap() {
           alt="Frivillig på foo"
         />
         <p className={`text-xl uppercase`}>Bliv foo - frivillig</p>
-        <Image src={"pil.svg"} width={40} height={40} />
+        <Image src={"pil.svg"} width={40} height={40} alt="arrow" />
       </button>
     </section>
   );
