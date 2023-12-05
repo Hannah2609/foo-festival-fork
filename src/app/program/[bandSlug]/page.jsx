@@ -34,65 +34,72 @@ function Singlepage() {
 
   return (
     <>
-      {band.logo && band.logo.startsWith("http") ? (
-        <Image
-          src={band.logo}
-          className="aspect-square object-contain mx-auto"
-          width={300}
-          height={300}
-          alt="product image"
-        />
-      ) : (
-        <Image
-          src={`https://robust-ionized-tartan.glitch.me/logos/${band.logo}`}
-          className="aspect-square object-contain mx-auto"
-          width={300}
-          height={300}
-          alt="product image"
-        />
-      )}
-      <div>
-        <h3 className="text-center text-fooYellow-200">{band.genre}</h3>
-        <h1 className="text-center text-4xl">{band.name}</h1>
-      </div>
-      <section className="grid sm:grid-cols-2 grid-cols-1 gap-4 mt-20">
+      <main>
+        {band.logo && band.logo.startsWith("http") ? (
+          <Image
+            src={band.logo}
+            className="aspect-square object-contain mx-auto"
+            width={300}
+            height={300}
+            alt="product image"
+          />
+        ) : (
+          <Image
+            src={`https://robust-ionized-tartan.glitch.me/logos/${band.logo}`}
+            className="aspect-square object-contain mx-auto"
+            width={300}
+            height={300}
+            alt="product image"
+          />
+        )}
         <div>
-          <div className="flex items-start gap-3">
-            <div>
-              <Image src="/musik.svg" width={40} height={40} alt="musik ikon" />
-            </div>
-            <div>
-              <h2>Midgaard</h2>
-              <h2>08:20 - 09:00</h2>
-            </div>
-          </div>
-          <div className="flex items-start mt-10 gap-3">
-            <Image
-              src="/medlemmer.svg"
-              width={40}
-              height={40}
-              alt="musik ikon"
-            />
-            <div className="flex flex-col">
-              <h2 className="text-2xl">Medlemmer</h2>
-              <ul className="mt-2">
-                {band.members &&
-                  band.members.map((name) => <li key={band.slug}>{name}</li>)}
-              </ul>
-            </div>
-          </div>
+          <h3 className="text-center text-fooYellow-200">{band.genre}</h3>
+          <h1 className="text-center text-4xl">{band.name}</h1>
         </div>
-        <article>
-          <p>{band.bio}</p>
+        <section className="grid sm:grid-cols-2 grid-cols-1 gap-4 mt-20">
+          <div>
+            <div className="flex items-start gap-3">
+              <div>
+                <Image
+                  src="/musik.svg"
+                  width={40}
+                  height={40}
+                  alt="musik ikon"
+                />
+              </div>
+              <div>
+                <h2>Midgaard</h2>
+                <h2>08:20 - 09:00</h2>
+              </div>
+            </div>
+            <div className="flex items-start mt-10 gap-3">
+              <Image
+                src="/medlemmer.svg"
+                width={40}
+                height={40}
+                alt="musik ikon"
+              />
+              <div className="flex flex-col">
+                <h2 className="text-2xl">Medlemmer</h2>
+                <ul className="mt-2">
+                  {band.members &&
+                    band.members.map((name) => <li key={band.slug}>{name}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <article>
+            <p>{band.bio}</p>
 
-          {/* hvis band.logoCredits findes og er sand returnerer den nedenstående*/}
-          {band.logoCredits && (
-            <p className="text-xs text-fooGrey-200 mt-2">
-              Fotocredits: {band.logoCredits}
-            </p>
-          )}
-        </article>
-      </section>
+            {/* hvis band.logoCredits findes og er sand returnerer den nedenstående*/}
+            {band.logoCredits && (
+              <p className="text-xs text-fooGrey-200 mt-2">
+                Fotocredits: {band.logoCredits}
+              </p>
+            )}
+          </article>
+        </section>
+      </main>
     </>
   );
 }
