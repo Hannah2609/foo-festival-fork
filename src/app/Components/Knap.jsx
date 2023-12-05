@@ -1,23 +1,26 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function Knap() {
   return (
     <section className="flex flex-wrap gap-20 justify-center">
-      <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit">
-        <Image
-          src={"musik.svg"}
-          width={100}
-          height={100}
-          sizes="(max-width: 768px) 40px, (max-width: 1200px) 90px, 100px"
-          className="absolute left-8 bottom-7"
-          alt="Årets program"
-        />
-        <p className={`text-base md:text-lg lg:text-xl uppercase`}>
-          Se årets program
-        </p>
-        <Image src={"pil.svg"} width={40} height={40} alt="arrow" />
-      </button>
+      <Link href={"/program"}>
+        <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit">
+          <Image
+            src={"musik.svg"}
+            width={100}
+            height={100}
+            sizes="(max-width: 768px) 40px, (max-width: 1200px) 90px, 100px"
+            className="absolute left-8 bottom-7"
+            alt="Årets program"
+          />
+          <p className={`text-base md:text-lg lg:text-xl uppercase`}>
+            Se årets program
+          </p>
+          <Image src={"pil.svg"} width={40} height={40} alt="arrow" />
+        </button>
+      </Link>
 
       <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit">
         <Image

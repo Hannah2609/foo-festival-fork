@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Bebas_Neue } from "next/font/google";
 
@@ -18,22 +19,22 @@ function Footer() {
       <div className="flex flex-col items-center mt-40">
         <h2 className={`text-5xl ${bebasNeue.className} lg:text-6xl xl:text-7xl p-8 text-black`}>FØLG MED</h2>
         <div className="flex gap-6">
-          <a href="#">
+          <Link href="#">
           <Image
             src="/facebook.svg"
             width={65}
             height={65}
             alt="Facebook logo"
           />
-          </a>
-          <a href="#">
+          </Link>
+          <Link href="#">
           <Image
             src="/instagram.svg"
             width={65}
             height={65}
             alt="Instagram logo"
           />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

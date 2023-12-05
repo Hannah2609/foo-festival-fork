@@ -21,6 +21,7 @@ async function ProgramPage() {
 
   const scenes = ["Midgard", "Jotunheim", "Vanaheim"];
   const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
   const merged = bands.map((band) => {
     const newBand = { ...band };
     scenes.forEach((scene) => {
@@ -46,7 +47,7 @@ async function ProgramPage() {
         Program
       </h1>
     
-      <Program newArray={merged} days={days} />
+      <Program newArray={merged} days={days}/>
       </main>
       <Footer />
     </>
