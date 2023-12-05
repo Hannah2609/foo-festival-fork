@@ -31,7 +31,7 @@ function Program({ newArray, days }) {
         {days.map((day) => (
           <button
             key={day}
-            className={`text-2xl px-2 p-1 w-40 rounded-full bg-fooPink-900 ${bebasNeue.className} md:text-3xl md:p-2 lg:w-50 lg:text-4xl `}
+            className={`text-xl px-4 p-1 w-20 rounded-full bg-fooPink-900 md:text-2xl md:p-2 lg:w-40 lg:text-2xl `}
             onClick={() => filterActsByDay(day)}
           >
             {day}
@@ -56,6 +56,7 @@ function Program({ newArray, days }) {
                 genre={act.genre}
                 start={act.eventInfo.start}
                 end={act.eventInfo.end}
+                day={act.day}
               />
             ))}
         </div>
@@ -79,6 +80,7 @@ function Program({ newArray, days }) {
                 genre={act.genre}
                 start={act.eventInfo.start}
                 end={act.eventInfo.end}
+                day={act.day}
               />
             ))}
         </div>
@@ -102,6 +104,7 @@ function Program({ newArray, days }) {
                 genre={act.genre}
                 start={act.eventInfo.start}
                 end={act.eventInfo.end}
+                day={act.day}
               />
             ))}
         </div>

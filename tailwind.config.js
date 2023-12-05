@@ -32,6 +32,9 @@ module.exports = {
           200: "#D9D9D9",
           900: "#2B2B2B",
         },
+        transparent: {
+          200: "transparent",
+        },
       },
     },
   },
