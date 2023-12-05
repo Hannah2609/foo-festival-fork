@@ -2,6 +2,7 @@ import Lineup from "./Components/Lineup";
 import Footer from "./components/Footer";
 import Knap from "./Components/Knap";
 import Link from "next/link";
+import Header from "./Components/Header";
 
 import { Bebas_Neue, Poppins } from "next/font/google";
 
@@ -20,6 +21,7 @@ const poppins = Poppins({
 export default function Home() {
   return (
     <>
+      <Header />
       <main>
         <section className="flex flex-col justify-center items-center h-screen">
           <h2
@@ -34,7 +36,7 @@ export default function Home() {
           </h1>
 
           <button
-            className={`text-center rounded-full bg-fooPink-900 p-2 px-10 text-base max-w-fit lg:p-4 lg:px-10 lg:text-lg transition ease-in-out hover:-translate-y-1 hover:scale-110  hover:bg-fooPink-800 duration-300 cursor-pointer	`}
+            className={`text-center rounded-full bg-fooPink-900 p-2 px-10 text-base max-w-fit lg:p-4 lg:px-10 lg:text-lg transition ease-in-out hover:-translate-y-1 hover:scale-110 uppercase hover:bg-fooPink-800 duration-300 cursor-pointer	`}
           >
             <Link href="/billetter">Køb billetter</Link>
           </button>
