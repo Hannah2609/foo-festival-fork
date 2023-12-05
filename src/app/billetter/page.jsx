@@ -19,7 +19,7 @@ function Billetter() {
       <Header />
       <main>
         <h1
-          className={`${bebasNeue.className} text-6xl md:text-7xl lg:text-8xl xl:text-9xl  mt-20 text-center`}
+          className={`${bebasNeue.className} text-6xl md:text-7xl lg:text-8xl xl:text-9xl mt-32 text-center text-fooYellow-200`}
         >
           Billetter
         </h1>

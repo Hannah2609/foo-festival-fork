@@ -45,7 +45,7 @@ async function ProgramPage() {
       <Header />
       <main>
         <h1
-          className={`text-6xl md:text-7xl lg:text-8xl xl:text-9xl ${bebasNeue.className} text-center text-fooYellow-200 mt-8`}
+          className={`text-6xl md:text-7xl lg:text-8xl xl:text-9xl ${bebasNeue.className} text-center text-fooYellow-200 mt-32`}
         >
           Program
         </h1>

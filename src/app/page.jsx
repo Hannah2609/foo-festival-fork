@@ -25,7 +25,7 @@ export default function Home() {
       <main>
         <section className="flex flex-col justify-center items-center h-screen">
           <h2
-            className={`${bebasNeue.className} text-2xl text-fooYellow-200 text-center mb-4`}
+            className={`${bebasNeue.className} text-2xl text-fooYellow-200 text-center mb-4 text-fooPink-800`}
           >
             FooFest
           </h2>
@@ -39,21 +39,24 @@ export default function Home() {
           >
             <Link href="/billetter">Køb billetter</Link>
           </button>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="70"
-            height="70"
-            fill="#EC5564"
-            class="bi bi-arrow-down-short"
-            viewBox="0 0 16 16"
-            className="mt-36 animate-bounce"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
-            />
-          </svg>
+          <Link href="#lineup">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="70"
+              height="70"
+              fill="#EC5564"
+              class="bi bi-arrow-down-short"
+              viewBox="0 0 16 16"
+              className="mt-36 animate-bounce"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+              />
+            </svg>
+          </Link>
         </section>
+        <div id="lineup"></div>
         <Lineup />
         <Knap />
       </main>

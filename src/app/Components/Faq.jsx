@@ -1,5 +1,12 @@
 import React from "react";
 import { Collapse, ConfigProvider } from "antd";
+import { Bebas_Neue } from "next/font/google";
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 const text = (
   <p
@@ -44,22 +51,23 @@ const items = [
 
 const Faq = () => (
   <div className="flex flex-col justify-center">
-    <h2 className="text-fooPink-900 text-center text-5xl mb-10">FAQ</h2>
+    <h2 className={`${bebasNeue.className} text-fooPink-900 text-center text-5xl mb-10`}>FAQ</h2>
     <div>
       <ConfigProvider
         theme={{
           token: {
-            fontSize: 24,
+            fontSize: 16,
             colorText: "#f2f2f2",
             colorBorder: "#EC5564",
-            colorTextDisabled: "#000000",
+            colorTextHeading: "#f2f2f2",
+            headerBg: "#000000",
           },
         }}
       >
         <Collapse
           items={items}
           size="large"
-          bordered={true}
+          bordered={false}
           defaultActiveKey={["1"]}
         />
       </ConfigProvider>
