@@ -31,6 +31,7 @@ module.exports = {
         },
         fooGrey: {
           200: "#D8D1CC",
+          800: "#131313",
           900: "#2B2B2B",
         },
         transparent: {

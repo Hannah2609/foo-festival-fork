@@ -30,7 +30,7 @@ function ActCard({ name, genre, start, end, src, slug, day}) {
           alt="product image"
         />
       )}
-      <div className="absolute inset-x-0 bottom-0 pt-40 pl-2 bg-gradient-to-t from-fooBlack-900 to-transparent-200">
+      <div className="absolute inset-x-0 bottom-0 pt-40 pl-2 bg-gradient-to-t from-fooGrey-800 to-transparent-200">
         <p className="text-fooYellow-200 ">{genre}</p>
         <h2 className={`text-3xl ${bebasNeue.className} xl:text-4xl mb-2`}>
           {name}

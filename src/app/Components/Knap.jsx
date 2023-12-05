@@ -3,19 +3,23 @@ import Image from "next/image";
 
 function Knap() {
   return (
-    <section className="grid grid-col-1 gap-20 lg:grid-cols-2">
-      <button className="flex items-end relative bg-fooGrey-900 pr-20 pl-20 py-4 gap-4 rounded-full max-w-fit">
+    <section className="flex flex-wrap gap-20 justify-center">
+      <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit">
         <Image
           src={"musik.svg"}
           width={100}
           height={100}
-          className="absolute left-4"
+          sizes="(max-width: 768px) 40px, (max-width: 1200px) 90px, 100px"
+          className="absolute left-8 bottom-7"
           alt="Årets program"
         />
-        <p className={`text-xl uppercase`}>Se årets program</p>
-        <Image src={"pil.svg"} width={40} height={40} alt="arrow"/>
+        <p className={`text-base md:text-lg lg:text-xl uppercase`}>
+          Se årets program
+        </p>
+        <Image src={"pil.svg"} width={40} height={40} alt="arrow" />
       </button>
-      <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-md">
+
+      <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit">
         <Image
           src={"telt.svg"}
           width={110}
@@ -23,7 +27,9 @@ function Knap() {
           className="absolute left-8 bottom-9"
           alt="Camping"
         />
-        <p className={`text-xl uppercase`}>Camping på foofest</p>
+        <p className={`text-base md:text-lg lg:text-xl uppercase`}>
+          Camping på foofest
+        </p>
         <Image src={"pil.svg"} width={40} height={40} alt="arrow" />
       </button>
       <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit">
@@ -34,7 +40,9 @@ function Knap() {
           className="absolute left-8 bottom-9"
           alt="Frivillig på foo"
         />
-        <p className={`text-xl uppercase`}>Bliv foo - frivillig</p>
+        <p className={`text-base md:text-lg lg:text-xl uppercase`}>
+          Bliv foo - frivillig
+        </p>
         <Image src={"pil.svg"} width={40} height={40} alt="arrow" />
       </button>
     </section>

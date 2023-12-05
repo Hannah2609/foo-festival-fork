@@ -1,5 +1,6 @@
 import React from "react";
 import Program from "../components/Program";
+import Footer from "../Components/Footer"
 
 import { Bebas_Neue } from "next/font/google";
 
@@ -38,13 +39,16 @@ async function ProgramPage() {
   });
 
   return (
-    <>
+    <> <main>
       <h1
         className={`text-6xl md:text-7xl lg:text-8xl xl:text-9xl ${bebasNeue.className} text-center text-fooYellow-200 mt-8`}
       >
         Program
       </h1>
+    
       <Program newArray={merged} days={days} />
+      </main>
+      <Footer />
     </>
   );
 }
