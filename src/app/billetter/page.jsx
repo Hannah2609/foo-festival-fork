@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Ticket from "../Components/Billet";
 import VipTicket from "../Components/VipBillet";
@@ -23,13 +22,15 @@ function Billetter() {
         >
           Billetter
         </h1>
-        <section className="flex justify-center align-baseline gap-10 mt-20 mb-20">
+        <section className="flex flex-col items-center gap-20 md:flex-row md:justify-center md:items-end md:gap-10 mt-20 mb-20">
           <Ticket />
           <VipTicket />
         </section>
-        <Faq />
-        </main>
-        <Footer />
+        <section className="mx-4 md:mx-40 lg:mx-60 xl:mx-80">
+          <Faq />
+        </section>
+      </main>
+      <Footer />
     </>
   );;
 }

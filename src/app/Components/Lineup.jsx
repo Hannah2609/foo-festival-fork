@@ -31,7 +31,7 @@ function Lineup() {
         Lineup
       </h1>
       <ol
-        className={`flex flex-wrap gap-5 mb-10 lg:m-10 justify-center items-baseline uppercase font-semibold	`}
+        className={`flex flex-wrap gap-5 mb-10 mt-10 lg:m-10 justify-center items-baseline uppercase font-semibold	`}
       >
         {names.slice(0, 30).map((band, index) => (
           <li

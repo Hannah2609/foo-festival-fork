@@ -25,7 +25,7 @@ export default function Home() {
       <main>
         <section className="flex flex-col justify-center items-center h-screen">
           <h2
-            className={`${bebasNeue.className} text-2xl text-center mb-4 text-fooPink-800`}
+            className={`${bebasNeue.className} text-2xl text-center mb-4 text-fooYellow-200`}
           >
             FooFest
           </h2>
@@ -35,19 +35,18 @@ export default function Home() {
             Natur, kultur og god musik
           </h1>
           <button
-            className={`text-center rounded-full bg-fooPink-900 p-2 px-10 text-base max-w-fit lg:p-4 lg:px-10 lg:text-lg transition ease-in-out hover:-translate-y-1 hover:scale-110 uppercase hover:bg-fooPink-800 duration-300 cursor-pointer	`}
+            className={`text-center rounded-full bg-fooPink-900 p-4 px-10 text-base max-w-fit lg:p-4 lg:px-14 lg:text-lg transition ease-in-out hover:-translate-y-1 hover:scale-110 uppercase hover:bg-fooPink-800 duration-300 cursor-pointer	`}
           >
             <Link href="/billetter">Køb billetter</Link>
           </button>
-          <Link href="#lineup">
+          <Link href="#lineup" className="mt-20 animate-bounce">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="70"
-              height="70"
-              fill="#EC5564"
+              width="60"
+              height="60"
+              fill="#FAE499"
               class="bi bi-arrow-down-short"
               viewBox="0 0 16 16"
-              className="mt-36 animate-bounce"
             >
               <path
                 fill-rule="evenodd"

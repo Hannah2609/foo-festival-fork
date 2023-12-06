@@ -6,7 +6,7 @@ function Knap() {
   return (
     <section className="flex flex-wrap gap-20 mt-40 justify-center">
       <Link href={"/program"}>
-        <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit">
+        <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-800 duration-300 cursor-pointer">
           <Image
             src={"musik.svg"}
             width={100}
@@ -22,7 +22,7 @@ function Knap() {
         </button>
       </Link>
 
-      <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit">
+      <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-800 duration-300 cursor-pointer">
         <Image
           src={"telt.svg"}
           width={110}
@@ -35,7 +35,7 @@ function Knap() {
         </p>
         <Image src={"pil.svg"} width={40} height={40} alt="arrow" />
       </button>
-      <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit">
+      <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-800 duration-300 cursor-pointer">
         <Image
           src={"group.svg"}
           width={90}

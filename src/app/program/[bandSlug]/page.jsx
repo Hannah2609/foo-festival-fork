@@ -2,6 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Header from "@/app/Components/Header";
 
 
 function Singlepage() {
@@ -9,7 +10,7 @@ function Singlepage() {
   const [program, setProgram] = useState([]);
 
   useEffect(() => {
-    const fetchBandInfo = fetch("http://localhost:8080/bands/the-beatles").then(
+    const fetchBandInfo = fetch("http://localhost:8080/bands/terminalist").then(
       (res) => res.json()
     );
     const fetchProgramInfo = fetch("http://localhost:8080/schedule/").then(
@@ -34,24 +35,27 @@ function Singlepage() {
 
   return (
     <>
+    <Header />
       <main>
-        {band.logo && band.logo.startsWith("http") ? (
-          <Image
-            src={band.logo}
-            className="aspect-square object-contain mx-auto"
-            width={300}
-            height={300}
-            alt="product image"
-          />
-        ) : (
-          <Image
-            src={`https://robust-ionized-tartan.glitch.me/logos/${band.logo}`}
-            className="aspect-square object-contain mx-auto"
-            width={300}
-            height={300}
-            alt="product image"
-          />
-        )}
+        <div className="h-screen relative">
+          {band.logo && band.logo.startsWith("http") ? (
+            <Image
+              src={band.logo}
+              fill
+              className="aspect-video object-cover mx-auto "
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt="product image"
+            />
+          ) : (
+            <Image
+                fill
+              src={`https://robust-ionized-tartan.glitch.me/logos/${band.logo}`}
+              className="aspect-video object-cover mx-auto "
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              alt="product image"
+            />
+          )}
+        </div>
         <div>
           <h3 className="text-center text-fooYellow-200">{band.genre}</h3>
           <h1 className="text-center text-4xl">{band.name}</h1>

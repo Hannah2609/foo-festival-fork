@@ -12,19 +12,21 @@ function Billet() {
   return (
     <article className="bg-fooGrey-900 rounded-large w-80">
       <div className="p-6">
-        <h2 className={`${bebasNeue.className} mb-4 text-5xl text-fooYellow-200`}>
+        <h2
+          className={`${bebasNeue.className} mb-4 text-5xl text-fooYellow-200`}
+        >
           Foo-billet
         </h2>
-        <ul className="mb-16">
-          <li>Vel cras tempus egestas . </li>
+        <ul className="mb-16 list-disc ml-4">
+          <li>Vel cras tempus egestas. </li>
           <li>ltrices feugiat eu turpis at. </li>
-          <li>Lorem ipsum dolor sit  </li>
+          <li>Lorem ipsum dolor sit. </li>
         </ul>
-        <h2 className={`${bebasNeue.className} text-3xl mb-2 text-white`}>
+        <h2 className={`${bebasNeue.className} text-3xl mb-4 text-white`}>
           799 DKK
         </h2>
         <Link href={""}>
-          <button className="bg-fooPink-900 p-4 rounded-full w-full">
+          <button className="bg-fooPink-900 p-4 rounded-full w-full uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-800 duration-300 cursor-pointer">
             {" "}
             Køb din billet{" "}
           </button>

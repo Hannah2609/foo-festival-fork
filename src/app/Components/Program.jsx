@@ -25,6 +25,22 @@ function Program({ newArray, days }) {
   const filterActsByDay = (day) => {
     setSelectedDay(day); // Opdaterer den valgte dag
   };
+
+  // Funktionen starter med at filtrerer ud fra scene og dag 
+  // Sorterer herefter "acts" ud fra sammenlignign af starttidspunkterne
+    const sortedByTime = (scene) => {
+      return newArray
+        .filter((act) => act.scene === scene && act.day === selectedDay)
+        .sort((a, b) => {
+          
+           const aTime = new Date(`1970-01-01T${a.eventInfo.start}`);
+           const bTime = new Date(`1970-01-01T${b.eventInfo.start}`);
+
+           return aTime.getTime() - bTime.getTime();
+        });
+    };
+
+
   return (
     <>
       <div className="flex justify-center flex-wrap my-8 mb-20 gap-5">
@@ -45,20 +61,19 @@ function Program({ newArray, days }) {
           Midgard
         </h3>
         <div className="flex gap-8 overflow-y-scroll mb-20 snap-mandatory snap-x">
-          {newArray
-            .filter((act) => act.scene === "Midgard" && act.day === selectedDay)
-            .map((act) => (
-              <ActCard
-                slug={act.slug}
-                src={act.logo}
-                key={act.name}
-                name={act.name}
-                genre={act.genre}
-                start={act.eventInfo.start}
-                end={act.eventInfo.end}
-                day={act.day}
-              />
-            ))}
+      {/* Vi mapper med sortedByTime istedet for newArray (filtreringen sker i sortedByTime istedt for her) */}
+          {sortedByTime("Midgard").map((act) => (
+            <ActCard
+              slug={act.slug}
+              src={act.logo}
+              key={act.name}
+              name={act.name}
+              genre={act.genre}
+              start={act.eventInfo.start}
+              end={act.eventInfo.end}
+              day={act.day}
+            />
+          ))}
         </div>
 
         <h3
@@ -67,22 +82,18 @@ function Program({ newArray, days }) {
           Vanaheim
         </h3>
         <div className="flex gap-8 overflow-y-scroll mb-20 snap-mandatory snap-x">
-          {newArray
-            .filter(
-              (act) => act.scene === "Vanaheim" && act.day === selectedDay
-            )
-            .map((act) => (
-              <ActCard
-                slug={act.slug}
-                src={act.logo}
-                key={act.name}
-                name={act.name}
-                genre={act.genre}
-                start={act.eventInfo.start}
-                end={act.eventInfo.end}
-                day={act.day}
-              />
-            ))}
+          {sortedByTime("Vanaheim").map((act) => (
+            <ActCard
+              slug={act.slug}
+              src={act.logo}
+              key={act.name}
+              name={act.name}
+              genre={act.genre}
+              start={act.eventInfo.start}
+              end={act.eventInfo.end}
+              day={act.day}
+            />
+          ))}
         </div>
 
         <h3
@@ -91,22 +102,18 @@ function Program({ newArray, days }) {
           Jotunheim
         </h3>
         <div className="flex gap-8 overflow-y-scroll mb-20 snap-mandatory snap-x">
-          {newArray
-            .filter(
-              (act) => act.scene === "Jotunheim" && act.day === selectedDay
-            )
-            .map((act) => (
-              <ActCard
-                slug={act.slug}
-                src={act.logo}
-                key={act.name}
-                name={act.name}
-                genre={act.genre}
-                start={act.eventInfo.start}
-                end={act.eventInfo.end}
-                day={act.day}
-              />
-            ))}
+          {sortedByTime("Jotunheim").map((act) => (
+            <ActCard
+              slug={act.slug}
+              src={act.logo}
+              key={act.name}
+              name={act.name}
+              genre={act.genre}
+              start={act.eventInfo.start}
+              end={act.eventInfo.end}
+              day={act.day}
+            />
+          ))}
         </div>
       </section>
     </>
