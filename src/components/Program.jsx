@@ -26,20 +26,18 @@ function Program({ newArray, days }) {
     setSelectedDay(day); // Opdaterer den valgte dag
   };
 
-  // Funktionen starter med at filtrerer ud fra scene og dag 
+  // Funktionen starter med at filtrerer ud fra scene og dag
   // Sorterer herefter "acts" ud fra sammenlignign af starttidspunkterne
-    const sortedByTime = (scene) => {
-      return newArray
-        .filter((act) => act.scene === scene && act.day === selectedDay)
-        .sort((a, b) => {
-          
-           const aTime = new Date(`1970-01-01T${a.eventInfo.start}`);
-           const bTime = new Date(`1970-01-01T${b.eventInfo.start}`);
+  const sortedByTime = (scene) => {
+    return newArray
+      .filter((act) => act.scene === scene && act.day === selectedDay)
+      .sort((a, b) => {
+        const aTime = new Date(`1970-01-01T${a.eventInfo.start}`);
+        const bTime = new Date(`1970-01-01T${b.eventInfo.start}`);
 
-           return aTime.getTime() - bTime.getTime();
-        });
-    };
-
+        return aTime.getTime() - bTime.getTime();
+      });
+  };
 
   return (
     <>
@@ -61,7 +59,7 @@ function Program({ newArray, days }) {
           Midgard
         </h3>
         <div className="flex gap-8 overflow-y-scroll mb-20 snap-mandatory snap-x">
-      {/* Vi mapper med sortedByTime istedet for newArray (filtreringen sker i sortedByTime istedt for her) */}
+          {/* Vi mapper med sortedByTime istedet for newArray (filtreringen sker i sortedByTime istedt for her) */}
           {sortedByTime("Midgard").map((act) => (
             <ActCard
               slug={act.slug}

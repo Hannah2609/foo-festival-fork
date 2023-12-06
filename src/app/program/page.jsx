@@ -1,7 +1,7 @@
 import React from "react";
-import Program from "../components/Program";
-import Footer from "../Components/Footer"
-import Header from "../Components/Header";
+import Program from "../../components/Program";
+import Footer from "../../components/Footer"
+import Header from "../../components/Header";
 
 import { Bebas_Neue } from "next/font/google";
 

@@ -1,8 +1,8 @@
-import Lineup from "./Components/Lineup";
-import Footer from "./components/Footer";
-import Knap from "./Components/Knap";
+import Lineup from "../components/Lineup";
+import Footer from "../components/Footer";
+import Knap from "../components/Knap";
 import Link from "next/link";
-import Header from "./Components/Header";
+import Header from "../components/Header";
 
 import { Bebas_Neue, Poppins } from "next/font/google";
 

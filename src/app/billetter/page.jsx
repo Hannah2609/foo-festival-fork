@@ -1,9 +1,9 @@
 import React from "react";
-import Ticket from "../Components/Billet";
-import VipTicket from "../Components/VipBillet";
-import Faq from "../Components/Faq";
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
+import Ticket from "../../components/Billet";
+import VipTicket from "../../components/VipBillet";
+import Faq from "../../components/Faq";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({

@@ -1,55 +1,44 @@
-"use client";
 import React from "react";
-import { useState, useEffect } from "react";
 import Image from "next/image";
-import Header from "@/app/Components/Header";
+import Header from "@/components/Header";
 
+export async function generateStaticParams() {
+  const res = await fetch("https://robust-ionized-tartan.glitch.me/bands");
+  const pages = await res.json();
 
-function Singlepage() {
-  const [band, setBand] = useState([]);
-  const [program, setProgram] = useState([]);
+  const paths = pages.map((page) => {
+    return { slug: page.slug };
+  });
 
-  useEffect(() => {
-    const fetchBandInfo = fetch("http://localhost:8080/bands/terminalist").then(
-      (res) => res.json()
-    );
-    const fetchProgramInfo = fetch("http://localhost:8080/schedule/").then(
-      (res) => res.json()
-    );
-    // bruger promise.all til at fetche 2 url samtidigt
-    Promise.all([fetchBandInfo, fetchProgramInfo]).then(
-      ([bandData, programData]) => {
-        setBand(bandData);
-        setProgram(programData);
-      }
-    );
-  }, []);
+  return paths;
+}
 
-  //   kode til kun at fetche en datafil
-  //   useEffect(() => {
-  //     fetch("http://localhost:8080/bands/a-perfect-circle")
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setBand(data);
-  //       });
+export default async function Singlepage({ params }) {
+  const { slug } = params;
+  const res = await fetch(
+    `https://robust-ionized-tartan.glitch.me/bands?slug=${slug}`
+  );
+
+  const data = await res.json();
+  const { name, logo, bio, genre, logoCredits, members } = data;
 
   return (
     <>
-    <Header />
+      <Header />
       <main>
         <div className="h-screen relative">
-          {band.logo && band.logo.startsWith("http") ? (
+          {logo && logo.startsWith("http") ? (
             <Image
-              src={band.logo}
+              src={logo}
               fill
               className="aspect-video object-cover mx-auto "
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               alt="product image"
             />
           ) : (
             <Image
-                fill
-              src={`https://robust-ionized-tartan.glitch.me/logos/${band.logo}`}
+              fill
+              src={`https://robust-ionized-tartan.glitch.me/logos/${logo}`}
               className="aspect-video object-cover mx-auto "
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               alt="product image"
@@ -57,8 +46,8 @@ function Singlepage() {
           )}
         </div>
         <div>
-          <h3 className="text-center text-fooYellow-200">{band.genre}</h3>
-          <h1 className="text-center text-4xl">{band.name}</h1>
+          <h3 className="text-center text-fooYellow-200">{genre}</h3>
+          <h1 className="text-center text-4xl">{name}</h1>
         </div>
         <section className="grid sm:grid-cols-2 grid-cols-1 gap-4 mt-20">
           <div>
@@ -86,19 +75,18 @@ function Singlepage() {
               <div className="flex flex-col">
                 <h2 className="text-2xl">Medlemmer</h2>
                 <ul className="mt-2">
-                  {band.members &&
-                    band.members.map((name) => <li key={band.slug}>{name}</li>)}
+                  {members && members.map((name) => <li key={slug}>{name}</li>)}
                 </ul>
               </div>
             </div>
           </div>
           <article>
-            <p>{band.bio}</p>
+            <p>{bio}</p>
 
             {/* hvis band.logoCredits findes og er sand returnerer den nedenstående*/}
-            {band.logoCredits && (
+            {logoCredits && (
               <p className="text-xs text-fooGrey-200 mt-2">
-                Fotocredits: {band.logoCredits}
+                Fotocredits: {logoCredits}
               </p>
             )}
           </article>
@@ -107,5 +95,3 @@ function Singlepage() {
     </>
   );
 }
-
-export default Singlepage;
