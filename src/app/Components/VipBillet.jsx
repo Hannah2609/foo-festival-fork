@@ -26,8 +26,8 @@ function VipBillet() {
           VIP-billet
         </h2>
         <ul className="mb-16 list-disc ml-4">
-          <li>Inkl. alt i FOO-billet </li>
-          <li>ltrices feugiat eu turpis at. </li>
+          <li className="text-sm">Inkl. alt i FOO-billet </li>
+          <li className="text-sm">ltrices feugiat eu turpis at. </li>
         </ul>
         <h2 className={`${bebasNeue.className} text-3xl mb-4 text-white`}>
           1299 DKK

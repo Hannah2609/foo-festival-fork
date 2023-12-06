@@ -18,9 +18,9 @@ function Billet() {
           Foo-billet
         </h2>
         <ul className="mb-16 list-disc ml-4">
-          <li>Vel cras tempus egestas. </li>
-          <li>ltrices feugiat eu turpis at. </li>
-          <li>Lorem ipsum dolor sit. </li>
+          <li className="text-sm">Vel cras tempus egestas. </li>
+          <li className="text-sm">ltrices feugiat eu turpis at. </li>
+          <li className="text-sm">Lorem ipsum dolor sit. </li>
         </ul>
         <h2 className={`${bebasNeue.className} text-3xl mb-4 text-white`}>
           799 DKK
