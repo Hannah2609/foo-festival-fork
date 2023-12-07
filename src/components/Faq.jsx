@@ -68,7 +68,7 @@ const Faq = () => (
           items={items}
           size="large"
           bordered={false}
-          defaultActiveKey={["1"]}
+          defaultActiveKey={["0"]}
         />
       </ConfigProvider>
     </div>
