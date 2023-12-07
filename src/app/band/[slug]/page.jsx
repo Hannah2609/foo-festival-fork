@@ -15,8 +15,9 @@ export async function generateStaticParams() {
 
 export default async function Singlepage({ params }) {
   const { slug } = params;
+  console.log(slug);
   const res = await fetch(
-    `https://robust-ionized-tartan.glitch.me/bands?slug=${slug}`
+    `https://robust-ionized-tartan.glitch.me/bands/${slug}`
   );
 
   const data = await res.json();
@@ -50,22 +51,7 @@ export default async function Singlepage({ params }) {
           <h1 className="text-center text-4xl">{name}</h1>
         </div>
         <section className="grid sm:grid-cols-2 grid-cols-1 gap-4 mt-20">
-          <div>
             <div className="flex items-start gap-3">
-              <div>
-                <Image
-                  src="/musik.svg"
-                  width={40}
-                  height={40}
-                  alt="musik ikon"
-                />
-              </div>
-              <div>
-                <h2>Midgaard</h2>
-                <h2>08:20 - 09:00</h2>
-              </div>
-            </div>
-            <div className="flex items-start mt-10 gap-3">
               <Image
                 src="/medlemmer.svg"
                 width={40}
@@ -79,11 +65,8 @@ export default async function Singlepage({ params }) {
                 </ul>
               </div>
             </div>
-          </div>
           <article>
             <p>{bio}</p>
-
-            {/* hvis band.logoCredits findes og er sand returnerer den nedenstående*/}
             {logoCredits && (
               <p className="text-xs text-fooGrey-200 mt-2">
                 Fotocredits: {logoCredits}

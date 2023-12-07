@@ -14,7 +14,7 @@ function ActCard({ name, genre, start, end, src, slug, day }) {
 
   return (
     <article className="min-w-fit snap-start rounded-lg overflow-hidden relative">
-      <Link href={`/program/${slug}`} key={slug}>
+      <Link href={`/band/${slug}`} key={slug}>
         {src && src.startsWith("http") ? (
           <Image
             src={src}
