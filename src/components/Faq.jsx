@@ -51,7 +51,11 @@ const items = [
 
 const Faq = () => (
   <div className="flex flex-col justify-center">
-    <h2 className={`${bebasNeue.className} text-fooPink-900 text-center text-5xl mb-10`}>FAQ</h2>
+    <h2
+      className={`${bebasNeue.className} text-fooPink-900 text-center text-5xl mb-10`}
+    >
+      FAQ
+    </h2>
     <div>
       <ConfigProvider
         theme={{
@@ -65,6 +69,7 @@ const Faq = () => (
         }}
       >
         <Collapse
+          accordion
           items={items}
           size="large"
           bordered={false}
