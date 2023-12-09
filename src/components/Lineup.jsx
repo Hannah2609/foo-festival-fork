@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useState, useEffect } from "react";
-
+import Link from "next/link";
 import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({
@@ -10,12 +10,10 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
-
 function Lineup() {
   const [names, setNames] = useState([]);
 
   useEffect(() => {
-
     fetch("http://localhost:8080/bands")
       .then((res) => res.json())
       .then((data) => {
@@ -34,18 +32,21 @@ function Lineup() {
         className={`flex flex-wrap gap-5 mb-10 mt-10 lg:m-10 justify-center items-baseline uppercase font-semibold	`}
       >
         {names.slice(0, 30).map((band, index) => (
-          <li
-            key={band.slug}
-            className={
-              index < 6
-                ? "text-3xl lg:text-5xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
-                : index < 16
-                ? "text-xl lg:text-3xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
-                : "text-sm lg:text-xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
-            }
-          >
-            {band.name}
-          </li>
+          <Link href={`/band/${band.slug}`} key={band.slug}>
+            <li
+              key={band.slug}
+              className={
+                index < 6
+                  ? "text-3xl lg:text-5xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
+                  : index < 16
+                  ? "text-xl lg:text-3xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
+                  : "text-sm lg:text-xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
+              }
+            >
+              {band.name}
+            </li>
+            <br />
+          </Link>
         ))}
       </ol>
       <h2 className="text-center uppercase font-medium text-sm">
@@ -53,7 +54,6 @@ function Lineup() {
       </h2>
     </section>
   );
-
 }
 
 export default Lineup;
