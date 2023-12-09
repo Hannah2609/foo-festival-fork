@@ -12,6 +12,8 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
+
+
 function Program({ newArray, days }) {
   const [selectedDay, setSelectedDay] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -67,12 +69,16 @@ function Program({ newArray, days }) {
             ))}
           </div>
           <section>
-            <h3
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 2 }}
+              viewport={{ once: true }}
               className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
             >
               Midgard
-            </h3>
-            <div className="flex gap-8 overflow-y-scroll mb-20 snap-mandatory snap-x">
+            </motion.h3>
+            <div className="flex gap-8 overflow-x-scroll  mb-20 snap-mandatory snap-x">
               {/* Vi mapper med sortedByTime istedet for newArray (filtreringen sker i sortedByTime istedt for her) */}
               {sortedByTime("Midgard").map((act) => (
                 <ActCard
@@ -88,12 +94,16 @@ function Program({ newArray, days }) {
               ))}
             </div>
 
-            <h3
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
               className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
             >
               Vanaheim
-            </h3>
-            <div className="flex gap-8 overflow-y-scroll mb-20 snap-mandatory snap-x">
+            </motion.h3>
+            <div className="flex gap-8 overflow-x-scroll mb-20 snap-mandatory snap-x">
               {sortedByTime("Vanaheim").map((act) => (
                 <ActCard
                   slug={act.slug}
@@ -108,12 +118,16 @@ function Program({ newArray, days }) {
               ))}
             </div>
 
-            <h3
+            <motion.h3
+              initial={{ opacity: 0}}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
               className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
             >
               Jotunheim
-            </h3>
-            <div className="flex gap-8 overflow-y-scroll mb-20 snap-mandatory snap-x">
+            </motion.h3>
+            <div className="flex gap-8 overflow-x-scroll mb-20 snap-mandatory snap-x">
               {sortedByTime("Jotunheim").map((act) => (
                 <ActCard
                   slug={act.slug}
