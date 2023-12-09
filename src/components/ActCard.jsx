@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { Bebas_Neue } from "next/font/google";
 
@@ -13,7 +15,11 @@ const bebasNeue = Bebas_Neue({
 function ActCard({ name, genre, start, end, src, slug, day }) {
 
   return (
-    <article className="min-w-fit snap-start rounded-lg overflow-hidden relative">
+    <motion.article
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      className="min-w-fit snap-start rounded-lg overflow-hidden relative"
+    >
       <Link href={`/band/${slug}`} key={slug}>
         {src && src.startsWith("http") ? (
           <Image
@@ -45,7 +51,7 @@ function ActCard({ name, genre, start, end, src, slug, day }) {
           </div>
         </div>
       </Link>
-    </article>
+    </motion.article>
   );
 }
 
