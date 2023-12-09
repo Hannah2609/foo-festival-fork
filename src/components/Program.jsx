@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import ActCard from "./ActCard";
+import { motion } from "framer-motion";
 
 import { Bebas_Neue } from "next/font/google";
 
