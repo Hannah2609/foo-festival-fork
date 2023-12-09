@@ -45,7 +45,6 @@ function Lineup() {
             >
               {band.name}
             </li>
-            <br />
           </Link>
         ))}
       </ol>
