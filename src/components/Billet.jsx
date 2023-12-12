@@ -25,12 +25,12 @@ function Billet() {
         <h2 className={`${bebasNeue.className} text-3xl mb-4 text-white`}>
           799 DKK
         </h2>
-        <Link href={"https://foo-shop-katjakroghs-projects.vercel.app/"}>
+        <a href={"https://foo-shop-katjakroghs-projects.vercel.app/"} target="_blank">
           <button className="bg-fooPink-900 p-4 rounded-full w-full uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-800 duration-300 cursor-pointer">
-            {" "}
-            Køb din billet{" "}
+      
+            Køb din billet
           </button>
-        </Link>
+        </a>
       </div>
     </article>
   );
