@@ -46,7 +46,7 @@ export default async function Singlepage({ params }) {
           />
         )}
       </section>
-      <main className="-mt-28 sm:-mt-36 relative z-10">
+      <main className="-mt-24 sm:-mt-36 relative z-10">
         <div>
           <h3
             className={`${bebasNeue.className} text-2xl text-center text-fooYellow-200`}
@@ -54,7 +54,7 @@ export default async function Singlepage({ params }) {
             {genre}
           </h3>
           <h1
-            className={`${bebasNeue.className} text-center text-6xl sm:text-7xl opacity-100`}
+            className={`${bebasNeue.className} text-center text-5xl sm:text-7xl opacity-100`}
           >
             {name}
           </h1>
