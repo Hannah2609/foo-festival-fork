@@ -1,6 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
+import styles from "../../../components/Singleview.module.css";
+import { Bebas_Neue } from "next/font/google";
+
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 export async function generateStaticParams() {
   const res = await fetch("https://robust-ionized-tartan.glitch.me/bands");
@@ -26,32 +34,32 @@ export default async function Singlepage({ params }) {
   return (
     <>
       <Header />
-
-      <section
-        className="h-screen relative"
-      >
+      <section className={styles.container}>
         {logo && logo.startsWith("http") ? (
-          <Image
-            src={logo}
-            fill
-            className="aspect-video object-cover mx-auto "
-            alt="product image"
-          />
+          <Image src={logo} fill className="object-cover" alt="band image" />
         ) : (
           <Image
             fill
             src={`https://robust-ionized-tartan.glitch.me/logos/${logo}`}
-            className="aspect-video object-cover mx-auto "
-            alt="product image"
+            className="object-cover"
+            alt="band image"
           />
         )}
       </section>
-      <main>
+      <main className="-mt-28 sm:-mt-36 relative z-10">
         <div>
-          <h3 className="text-center text-fooYellow-200">{genre}</h3>
-          <h1 className="text-center text-4xl">{name}</h1>
+          <h3
+            className={`${bebasNeue.className} text-2xl text-center text-fooYellow-200`}
+          >
+            {genre}
+          </h3>
+          <h1
+            className={`${bebasNeue.className} text-center text-6xl sm:text-7xl opacity-100`}
+          >
+            {name}
+          </h1>
         </div>
-        <section className="grid sm:grid-cols-2 grid-cols-1 gap-4 mt-20">
+        <section className="grid sm:grid-cols-2 grid-cols-1 gap-4 mt-10 sm:mt-20">
           <div className="flex items-start gap-3">
             <Image
               src="/medlemmer.svg"

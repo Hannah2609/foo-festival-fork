@@ -1,0 +1,14 @@
+.container {
+  height: 55vh;
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  filter: grayscale(100%);
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .container {
+    height: 35vh;
+  }
+}
