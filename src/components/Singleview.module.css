@@ -1,11 +1,11 @@
 .container {
-  height: 55vh;
+  height: 70vh;
   filter: grayscale(100%);
   opacity: 0.4;
 }
 
 @media (max-width: 768px) {
   .container {
-    height: 35vh;
+    height: 50vh;
   }
 }

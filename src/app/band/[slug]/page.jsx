@@ -45,6 +45,7 @@ export default async function Singlepage({ params }) {
             alt="band image"
           />
         )}
+        <div className="absolute inset-x-0 bottom-0 pt-40 pl-2 bg-gradient-to-t from-black to-transparent-200"></div>
       </section>
       <main className="-mt-24 sm:-mt-36 relative z-10">
         <div>
