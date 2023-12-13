@@ -60,8 +60,8 @@ export default async function Singlepage({ params }) {
             {name}
           </h1>
         </div>
-        <section className="grid sm:grid-cols-2 grid-cols-1 gap-4 mt-10 sm:mt-20">
-          <div className="flex items-start gap-3">
+        <section className="grid sm:grid-cols-2 grid-cols-1 gap-10 md:gap-4 mt-10 sm:mt-20 sm:mx-28">
+          <div className="flex items-start gap-3 ">
             <Image
               src="/medlemmer.svg"
               width={40}
@@ -70,12 +70,13 @@ export default async function Singlepage({ params }) {
             />
             <div className="flex flex-col">
               <h2 className="text-2xl">Medlemmer</h2>
-              <ul className="mt-2">
+              <ul className="mt-4">
                 {members && members.map((name) => <li key={slug}>{name}</li>)}
               </ul>
             </div>
           </div>
-          <article>
+          <article >
+            <h2 className="text-2xl mb-4" >Om {name}</h2>
             <p>{bio}</p>
             {logoCredits && (
               <p className="text-xs text-fooGrey-200 mt-2">
