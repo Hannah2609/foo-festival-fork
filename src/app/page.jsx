@@ -29,7 +29,7 @@ export default function Home() {
             Natur, kultur og god musik
           </h1>
           <button
-            className={`text-center rounded-full bg-fooPink-900 p-4 px-10 text-base max-w-fit lg:p-4 lg:px-14 lg:text-lg transition ease-in-out hover:-translate-y-1 hover:scale-110 uppercase hover:bg-fooPink-800 duration-300 cursor-pointer	`}
+            className={`text-center font-medium rounded-full bg-fooPink-900 p-4 px-10 text-base max-w-fit lg:p-4 lg:px-14 lg:text-lg transition ease-in-out hover:-translate-y-1 hover:scale-110 uppercase hover:bg-fooPink-800 duration-300 cursor-pointer	`}
           >
             <Link href="/billetter">Køb billetter</Link>
           </button>
