@@ -30,7 +30,7 @@ function VipBillet() {
           <li className="text-sm">ltrices feugiat eu turpis at. </li>
         </ul>
         <h2 className={`${bebasNeue.className} text-3xl mb-4 text-white`}>
-          1299 DKK
+          FRA 1299 DKK
         </h2>
         <Link
           href={"https://foo-shop-katjakroghs-projects.vercel.app/"}

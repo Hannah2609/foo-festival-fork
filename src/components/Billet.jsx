@@ -23,7 +23,7 @@ function Billet() {
           <li className="text-sm">Lorem ipsum dolor sit. </li>
         </ul>
         <h2 className={`${bebasNeue.className} text-3xl mb-4 text-white`}>
-          799 DKK
+          FRA 799 DKK
         </h2>
         <Link
           href={"https://foo-shop-katjakroghs-projects.vercel.app/"}
