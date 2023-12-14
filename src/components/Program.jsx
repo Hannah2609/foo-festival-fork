@@ -23,19 +23,17 @@ function Program({ newArray, days }) {
       .toLowerCase();
     // Opdaterer den valgte dag til den aktuelle dag
     setSelectedDay(today);
-  }, []);
+
+    // Bestemmer at loading skal lytte på data fra NewArray
+    if (newArray) {
+      setIsLoading(false);
+    }
+  }, [newArray]);
 
   const filterActsByDay = (day) => {
     // Opdaterer den valgte dag
     setSelectedDay(day);
   };
-
-  // Bestemmer at loading skal lytte på data fra NewArray
-  useEffect(() => {
-    if (newArray) {
-      setIsLoading(false);
-    }
-  }, [newArray]);
 
   // Funktionen starter med at filtrerer ud fra scene og dag
   // Sorterer herefter "acts" ud fra sammenlignign af starttidspunkterne
