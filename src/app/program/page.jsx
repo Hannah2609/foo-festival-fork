@@ -10,6 +10,11 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
+export const metadata = {
+  title: "FooFest | Program",
+};
+
+
 async function ProgramPage() {
   // Jonas har hjulpet med denne kodedel
   const bands = await fetch(

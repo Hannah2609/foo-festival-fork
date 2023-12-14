@@ -4,13 +4,17 @@ import Knap from "../components/Knap";
 import Link from "next/link";
 import Header from "../components/Header";
 
-import { Bebas_Neue} from "next/font/google";
+import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
   weight: "400",
   display: "swap",
 });
+
+export const metadata = {
+  title: "FooFest | Forside",
+};
 
 export default function Home() {
   return (

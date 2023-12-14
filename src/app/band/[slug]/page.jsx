@@ -10,6 +10,10 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
+export const metadata = {
+  title: "FooFest | SingleView",
+};
+
 export async function generateStaticParams() {
   const res = await fetch("https://robust-ionized-tartan.glitch.me/bands");
   const pages = await res.json();

@@ -12,6 +12,11 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
+export const metadata = {
+  title: "FooFest | Billetter",
+};
+
+
 function Billetter() {
   return (
     <>
