@@ -26,7 +26,6 @@ export default async function Singlepage({ params }) {
   );
 
   const data = await res.json();
-  const { name, logo, bio, genre, logoCredits, members } = data;
 
   return (
     <>
