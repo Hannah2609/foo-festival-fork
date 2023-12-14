@@ -14,7 +14,7 @@ function Lineup() {
   const [names, setNames] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/bands")
+    fetch("https://robust-ionized-tartan.glitch.me/bands")
       .then((res) => res.json())
       .then((data) => {
         setNames(data);

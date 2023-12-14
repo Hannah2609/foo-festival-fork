@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({

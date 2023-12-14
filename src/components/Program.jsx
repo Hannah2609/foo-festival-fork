@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import ActCard from "./ActCard";
 import { motion } from "framer-motion";
 import LoadingAnimation from "./LoadingAnimation";
-
 import { Bebas_Neue } from "next/font/google";
 
 const bebasNeue = Bebas_Neue({
@@ -11,8 +10,6 @@ const bebasNeue = Bebas_Neue({
   weight: "400",
   display: "swap",
 });
-
-
 
 function Program({ newArray, days }) {
   const [selectedDay, setSelectedDay] = useState("");
@@ -24,11 +21,13 @@ function Program({ newArray, days }) {
     const today = new Date()
       .toLocaleDateString("en-US", { weekday: "short" })
       .toLowerCase();
-    setSelectedDay(today); // Opdaterer den valgte dag til den aktuelle dag
+    // Opdaterer den valgte dag til den aktuelle dag
+    setSelectedDay(today);
   }, []);
 
   const filterActsByDay = (day) => {
-    setSelectedDay(day); // Opdaterer den valgte dag
+    // Opdaterer den valgte dag
+    setSelectedDay(day);
   };
 
   // Bestemmer at loading skal lytte på data fra NewArray
@@ -119,7 +118,7 @@ function Program({ newArray, days }) {
             </div>
 
             <motion.h3
-              initial={{ opacity: 0}}
+              initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1 }}
               viewport={{ once: true }}
