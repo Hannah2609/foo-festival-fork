@@ -83,7 +83,7 @@ function SingleView({ data }) {
                   </svg>
                 </Link>
               </div>
-              <section className="grid sm:grid-cols-2 grid-cols-1 gap-10 md:gap-4 mt-10 sm:mt-20 sm:mx-28">
+              <section className="grid sm:grid-cols-2 grid-cols-1 gap-10 md:gap-4 mt-2 sm:mt-16 sm:mx-28">
                 <div className="flex gap-3 mt-6">
                   <div className="flex flex-col">
                     <h2 className={`${bebasNeue.className} text-2xl`}>
