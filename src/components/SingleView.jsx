@@ -53,23 +53,6 @@ function SingleView({ data }) {
             animate={{ y: -35 }}
             viewport={{ once: true }}
           >
-            <div className="gap-2 sm:rounded-full sm:p-1 sm:bg-fooPink-900 sm:w-max sm:ml-5 ml-2">
-              <Link href="/program">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="60"
-                  height="40"
-                  fill="currentColor"
-                  className="bi bi-arrow-left"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-                  />
-                </svg>
-              </Link>
-            </div>
             <main className="-mt-32 sm:-mt-40 relative z-10">
               <div>
                 <h3
@@ -82,6 +65,23 @@ function SingleView({ data }) {
                 >
                   {data.name}
                 </h1>
+              </div>
+              <div className="sm:rounded-full sm:p-1 sm:bg-fooPink-900 sm:w-max">
+                <Link href="/program">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="60"
+                    height="40"
+                    fill="currentColor"
+                    className="bi bi-arrow-left"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                    />
+                  </svg>
+                </Link>
               </div>
               <section className="grid sm:grid-cols-2 grid-cols-1 gap-10 md:gap-4 mt-10 sm:mt-20 sm:mx-28">
                 <div className="flex gap-3 mt-6">
