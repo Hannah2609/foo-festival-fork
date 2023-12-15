@@ -53,43 +53,41 @@ function NavBar() {
               </div>
             </div>
           </div>
-          <div>
-            <div
-              className={`flex-1 justify-self-center pb-3 mt-8  ${
-                navbar ? "p-10 md:p-20 block" : "hidden"
-              }`}
-            >
-              <ul className="h-screen items-center flex flex-col gap-6 ">
-                <li
-                  className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
-                >
-                  <Link href="/billetter" onClick={() => setNavbar(!navbar)}>
-                    Billetter
-                  </Link>
-                </li>
-                <li
-                  className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
-                >
-                  <Link href="/program" onClick={() => setNavbar(!navbar)}>
-                    Program
-                  </Link>
-                </li>
-                <li
-                  className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
-                >
-                  <Link href="/" onClick={() => setNavbar(!navbar)}>
-                    Camping
-                  </Link>
-                </li>
-                <li
-                  className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
-                >
-                  <Link href="/" onClick={() => setNavbar(!navbar)}>
-                    Bliv frivillig
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          <div
+            className={`flex-1 justify-self-center pb-3 mt-8  ${
+              navbar ? "p-10 md:p-20 block" : "hidden"
+            }`}
+          >
+            <ul className="h-screen items-center flex flex-col gap-6 ">
+              <li
+                className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
+              >
+                <Link href="/billetter" onClick={() => setNavbar(false)}>
+                  Billetter
+                </Link>
+              </li>
+              <li
+                className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
+              >
+                <Link href="/program" onClick={() => setNavbar(false)}>
+                  Program
+                </Link>
+              </li>
+              <li
+                className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
+              >
+                <Link href="/" onClick={() => setNavbar(false)}>
+                  Camping
+                </Link>
+              </li>
+              <li
+                className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
+              >
+                <Link href="/" onClick={() => setNavbar(false)}>
+                  Bliv frivillig
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
