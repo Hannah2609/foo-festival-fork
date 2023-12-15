@@ -16,7 +16,7 @@ export const metadata = {
 
 
 async function ProgramPage() {
-  // Jonas har hjulpet med denne kodedel
+  // Jonas har hjulpet med denne kodedel, hvor vi merger de to links sammen
   const bands = await fetch(
     "https://robust-ionized-tartan.glitch.me/bands"
   ).then((r) => r.json());
