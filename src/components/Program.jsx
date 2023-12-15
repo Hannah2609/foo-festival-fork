@@ -17,21 +17,19 @@ function Program({ newArray, days }) {
 
   // useEffect bruges her, så hver gang siden indlæses, så vises de artister der spiller idag, så der ikke bare er en blank side
   useEffect(() => {
-    // Find den aktuelle dag
     const today = new Date()
-      .toLocaleDateString("en-US", { weekday: "short" })
+      .toLocaleDateString("en", { weekday: "short" })
       .toLowerCase();
-    // Opdaterer den valgte dag til den aktuelle dag
     setSelectedDay(today);
 
-    // Bestemmer at loading skal lytte på data fra NewArray
+    // Loading Animation
     if (newArray) {
       setIsLoading(false);
     }
   }, [newArray]);
 
+  // Opdaterer den valgte dag
   const filterActsByDay = (day) => {
-    // Opdaterer den valgte dag
     setSelectedDay(day);
   };
 
