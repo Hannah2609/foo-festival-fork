@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* Skjul scrollbar */
-
+/* Vi har brugt chat-gpt til at fortælle hvordan vi skjuler og styler den indbyggede scroll-bar */
 @media (max-width: 650px) {
 ::-webkit-scrollbar {
   height: 5px;
