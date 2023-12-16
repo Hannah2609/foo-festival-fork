@@ -11,7 +11,9 @@ const bebasNeue = Bebas_Neue({
 });
 
 function NavBar() {
+  
   const [navbar, setNavbar] = useState(false);
+
   return (
     <div>
       <nav
