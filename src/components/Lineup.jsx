@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import LoadingAnimation from "./LoadingAnimation";
 import { Bebas_Neue } from "next/font/google";
+import { motion } from "framer-motion";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -29,7 +30,14 @@ function Lineup() {
       {isLoading ? (
         <LoadingAnimation />
       ) : (
-        <section className="mt-20 mb-20">
+        <motion.section
+          className="my-20"
+          initial={{ opacity: 0, y:300 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          animate={{ y: 0 }}
+          viewport={{ once: true }}
+        >
           <h1
             className={`${bebasNeue.className} text-6xl text-fooYellow-200 text-center`}
           >
@@ -58,7 +66,7 @@ function Lineup() {
           <h2 className="text-center uppercase font-medium text-sm">
             Og mange flere...
           </h2>
-        </section>
+        </motion.section>
       )}
     </>
   );
