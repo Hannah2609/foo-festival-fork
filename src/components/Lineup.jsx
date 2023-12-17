@@ -36,16 +36,16 @@ function Lineup() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
           animate={{ y: 0 }}
-          viewport={{ once: true }}
-        >
+          viewport={{ once: true }}>
+
           <h1
-            className={`${bebasNeue.className} text-6xl text-fooYellow-200 text-center`}
-          >
+            className={`${bebasNeue.className} text-6xl text-fooYellow-200 text-center`} >
             Lineup
           </h1>
+
           <ol
-            className={`flex flex-wrap gap-5 mb-10 mt-10 lg:m-10 justify-center items-baseline uppercase font-semibold	`}
-          >
+            className={`flex flex-wrap gap-5 mb-10 mt-10 lg:m-10 justify-center items-baseline uppercase font-semibold	`}>
+
             {names.slice(0, 30).map((band, index) => (
               <Link href={`/band/${band.slug}`} key={band.slug}>
                 <li
@@ -62,10 +62,13 @@ function Lineup() {
                 </li>
               </Link>
             ))}
+
           </ol>
+
           <h2 className="text-center uppercase font-medium text-sm">
             Og mange flere...
           </h2>
+
         </motion.section>
       )}
     </>
