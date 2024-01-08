@@ -28,7 +28,7 @@ export default function Home() {
             FooFest
           </h2>
           <h1
-            className={`${bebasNeue.className} text-7xl md:text-8xl lg:text-9xl lg:max-w-3xl text-fooYellow-200 text-center mb-20`}
+            className={`${bebasNeue.className} text-7xl md:text-8xl lg:text-9xl lg:max-w-3xl text-fooYellow-200 text-center mb-20 mx-20`}
           >
             Natur, kultur og god musik
           </h1>
