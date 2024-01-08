@@ -4,6 +4,7 @@ import Knap from "../components/Knap";
 import Link from "next/link";
 import Header from "../components/Header";
 import { Bebas_Neue } from "next/font/google";
+import Skib from "@/components/Skib";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <section className="flex flex-col justify-center items-center h-screen">
+        <section className="flex flex-col justify-center items-center h-screen relative -mx-20">
           <h2
             className={`${bebasNeue.className} text-2xl text-center mb-4 text-fooYellow-200`}
           >
@@ -32,7 +33,7 @@ export default function Home() {
             Natur, kultur og god musik
           </h1>
           <button
-            className={`text-center font-medium rounded-full bg-fooPink-900 p-4 px-10 text-base max-w-fit lg:p-4 lg:px-14 lg:text-lg transition ease-in-out hover:-translate-y-1 hover:scale-110 uppercase hover:bg-fooPink-800 duration-300 cursor-pointer	`}
+            className={`text-center font-medium rounded-full bg-fooPink-900 p-4 px-10 text-base max-w-fit lg:p-4 lg:px-14 lg:text-lg transition ease-in-out hover:-translate-y-1 hover:scale-110 uppercase hover:bg-fooPink-800 duration-300 cursor-pointer`}
           >
             <Link href="/billetter">Køb billetter</Link>
           </button>
@@ -42,7 +43,7 @@ export default function Home() {
               width="60"
               height="60"
               fill="#FAE499"
-              class="bi bi-arrow-down-short"
+              className="bi bi-arrow-down-short"
               viewBox="0 0 16 16"
             >
               <path
@@ -51,6 +52,7 @@ export default function Home() {
               />
             </svg>
           </Link>
+          <Skib />
         </section>
         <div id="lineup"></div>
         <Lineup />
