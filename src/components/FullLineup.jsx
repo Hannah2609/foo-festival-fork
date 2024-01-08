@@ -33,7 +33,7 @@ function FullLineup() {
         <LoadingAnimation />
       ) : (
         <motion.section
-          className="mt-40"
+          className="mt-20"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -41,7 +41,7 @@ function FullLineup() {
           viewport={{ once: true }}
         >
           <ol
-            className={`flex flex-wrap gap-5 mb-10 mt-20 lg:m-10 justify-center items-baseline uppercase 	`}
+            className={`flex flex-wrap gap-5 mb-10 mt-10 lg:m-10 justify-center items-baseline uppercase 	`}
           >
             {names.map((band, index) => (
               <Link href={`/band/${band.slug}`} key={band.slug}>
@@ -54,7 +54,7 @@ function FullLineup() {
                       ? "text-xl lg:text-4xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	font-semibold"
                       : index < 62
                       ? "text-base lg:text-2xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer"
-                      : "text-xs lg:text-sm transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer"
+                      : "text-xs lg:text-base transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer"
                   }
                 >
                   {band.name}
