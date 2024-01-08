@@ -21,14 +21,14 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <section className="flex flex-col justify-center items-center h-screen relative -mx-20">
+        <section className="flex flex-col justify-center items-center h-screen relative sm:-mx-16 -mx-9">
           <h2
             className={`${bebasNeue.className} text-2xl text-center mb-4 text-fooYellow-200`}
           >
             FooFest
           </h2>
           <h1
-            className={`${bebasNeue.className} text-7xl md:text-8xl lg:text-9xl lg:max-w-3xl text-fooYellow-200 text-center mb-20 mx-20`}
+            className={`${bebasNeue.className} text-7xl md:text-8xl lg:text-9xl lg:max-w-3xl text-fooYellow-200 text-center mb-20 sm:mx-16 mx-9`}
           >
             Natur, kultur og god musik
           </h1>
