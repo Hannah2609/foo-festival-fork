@@ -57,33 +57,40 @@ function NavBar() {
           </div>
           <div
             className={`flex-1 justify-self-center pb-3 mt-8  ${
-              navbar ? "p-10 md:p-20 block" : "hidden"
+              navbar ? "pt-20 sm:pt-0 block" : "hidden"
             }`}
           >
             <ul className="h-screen items-center flex flex-col gap-6 ">
               <li
-                className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
+                className={`pb-6 text-5xl lg:text-6xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
               >
                 <Link href="/billetter" onClick={() => setNavbar(false)}>
                   Billetter
                 </Link>
               </li>
               <li
-                className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
+                className={`pb-6 text-5xl lg:text-6xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
               >
                 <Link href="/program" onClick={() => setNavbar(false)}>
                   Program
                 </Link>
               </li>
               <li
-                className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
+                className={`pb-6 text-5xl lg:text-6xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
+              >
+                <Link href="/lineup" onClick={() => setNavbar(false)}>
+                  Lineup
+                </Link>
+              </li>
+              <li
+                className={`pb-6 text-5xl lg:text-6xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
               >
                 <Link href="/" onClick={() => setNavbar(false)}>
                   Camping
                 </Link>
               </li>
               <li
-                className={`pb-6 text-5xl lg:text-7xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
+                className={`pb-6 text-5xl lg:text-6xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
               >
                 <Link href="/" onClick={() => setNavbar(false)}>
                   Bliv frivillig

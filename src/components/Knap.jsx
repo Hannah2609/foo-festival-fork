@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Knap() {
   return (
-    <section className="flex flex-wrap gap-20 mt-40 justify-center">
+    <section className="flex flex-wrap gap-20 mt-20 justify-center">
       <Link href={"/program"}>
         <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-800 duration-300 cursor-pointer">
           <Image
