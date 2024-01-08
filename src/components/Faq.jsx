@@ -54,7 +54,7 @@ const Faq = () => (
     <h2
       className={`${bebasNeue.className} text-fooPink-900 text-center text-5xl mb-10`}
     >
-      FAQ
+      Det skal du vide om FooFest
     </h2>
     <div>
       <ConfigProvider

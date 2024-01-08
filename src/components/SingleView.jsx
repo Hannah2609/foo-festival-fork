@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import styles from "./Singleview.module.css";
 import LoadingAnimation from "./LoadingAnimation";
 import Link from "next/link";
+import BackBtn from "./BackBtn";
 import Image from "next/image";
 import { Bebas_Neue } from "next/font/google";
 
@@ -66,7 +67,8 @@ function SingleView({ data }) {
                   {data.name}
                 </h1>
               </div>
-              <div className="sm:rounded-full sm:p-1 sm:bg-fooPink-900 sm:w-max">
+              <BackBtn />
+              {/* <div className="sm:rounded-full sm:p-1 sm:bg-fooPink-900 sm:w-max">
                 <Link href="/program">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +84,7 @@ function SingleView({ data }) {
                     />
                   </svg>
                 </Link>
-              </div>
+              </div> */}
               <section className="grid sm:grid-cols-2 grid-cols-1 gap-10 md:gap-4 mt-2 sm:mt-16 sm:mx-28">
                 <div className="flex gap-3 mt-6 sm:mt-1 lg:mt-2">
                   <div className="flex flex-col">
