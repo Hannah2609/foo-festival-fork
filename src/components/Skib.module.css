@@ -1,5 +1,5 @@
 .skib {
-  animation: animate 10s infinite linear;
+  animation: animate 15s infinite linear;
 }
 
 @keyframes animate {
