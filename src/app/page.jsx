@@ -5,6 +5,7 @@ import Link from "next/link";
 import Header from "../components/Header";
 import { Bebas_Neue } from "next/font/google";
 import Skib from "@/components/Skib";
+import Faq from "@/components/Faq";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -57,6 +58,9 @@ export default function Home() {
         <div id="lineup"></div>
         <Lineup />
         <Knap />
+        <section className="mx-4 md:mx-40 lg:mx-60 xl:mx-80 mt-36">
+          <Faq />
+        </section>
       </main>
       <Footer />
     </>
