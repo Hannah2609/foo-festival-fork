@@ -56,11 +56,11 @@ function NavBar() {
             </div>
           </div>
           <div
-            className={`flex-1 justify-self-center pb-3 mt-8  ${
-              navbar ? "pt-20 sm:pt-0 block" : "hidden"
+            className={`flex-1 justify-self-center ${
+              navbar ? "block" : "hidden"
             }`}
           >
-            <ul className="h-screen items-center flex flex-col gap-6 ">
+            <ul className="h-screen items-center justify-center flex flex-col gap-6 pb-28 md:pb-20">
               <li
                 className={`pb-6 text-5xl lg:text-6xl text-fooYellow-200 py-2 md:px-6 text-center hover:text-fooPink-800 focus:text-fooPink-900 ${bebasNeue.className}`}
               >
