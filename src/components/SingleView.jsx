@@ -35,14 +35,14 @@ function SingleView({ data }) {
                 src={data.logo}
                 fill
                 className="object-cover"
-                alt="band image"
+                alt=""
               />
             ) : (
               <Image
                 fill
                 src={`https://robust-ionized-tartan.glitch.me/logos/${data.logo}`}
                 className="object-cover"
-                alt="band image"
+                alt=""
               />
             )}
             <div className="absolute inset-x-0 bottom-0 pt-40 pl-2 bg-gradient-to-t from-black to-transparent-200"></div>
@@ -68,23 +68,7 @@ function SingleView({ data }) {
                 </h1>
               </div>
               <BackBtn />
-              {/* <div className="sm:rounded-full sm:p-1 sm:bg-fooPink-900 sm:w-max">
-                <Link href="/program">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="60"
-                    height="40"
-                    fill="currentColor"
-                    className="bi bi-arrow-left"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-                    />
-                  </svg>
-                </Link>
-              </div> */}
+      
               <section className="grid sm:grid-cols-2 grid-cols-1 gap-10 md:gap-4 mt-2 sm:mt-16 sm:mx-28">
                 <div className="flex gap-3 mt-6 sm:mt-1 lg:mt-2">
                   <div className="flex flex-col">

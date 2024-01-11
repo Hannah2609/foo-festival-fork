@@ -10,6 +10,7 @@ export default function BackBtn() {
       className="sm:rounded-full sm:p-1 sm:bg-fooPink-800 sm:hover:bg-fooPink-900 sm:w-max"
       type="button"
       onClick={() => router.back()}
+      aria-label="Gå tilbage"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
