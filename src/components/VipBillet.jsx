@@ -32,10 +32,7 @@ function VipBillet() {
         <h2 className={`${bebasNeue.className} text-3xl mb-4 text-white`}>
           FRA 1299 DKK
         </h2>
-        <Link
-          href={"https://foo-shop-katjakroghs-projects.vercel.app/"}
-          target="_blank"
-        >
+        <Link href={"https://foo-shop-fork.vercel.app"} target="_blank">
           <button className="bg-fooPink-800 font-medium p-4 rounded-full w-full uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-900 duration-300 cursor-pointer">
             Køb din billet
           </button>
