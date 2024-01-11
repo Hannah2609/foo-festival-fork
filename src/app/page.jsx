@@ -38,8 +38,8 @@ export default function Home() {
           >
             <Link href="/billetter">Køb billetter</Link>
           </button>
-          <button className="mt-20 animate-bounce" >
-            <Link href="#lineup" aria-label="go down to lineup">
+
+            <Link href="#lineup" className="mt-20 animate-bounce" aria-label="go down to lineup">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="60"
@@ -54,7 +54,7 @@ export default function Home() {
                 />
               </svg>
             </Link>
-          </button>
+
           <Skib />
         </section>
         <div id="lineup"></div>
