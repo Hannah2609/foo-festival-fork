@@ -26,7 +26,7 @@ function NavBar() {
         <div className="justify-between px-4 md:mx-10 mt-4">
           <div>
             <div className="flex items-center justify-between py-3 ">
-              <Link className="flex flex-col items-center" href="/">
+              <Link className="flex flex-col items-center" href="/" aria-label="home button">
                 <Image src={"/logo.svg"} width={80} height={80} alt="Logo home button" />
               </Link>
 
