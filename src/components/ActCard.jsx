@@ -22,14 +22,14 @@ function ActCard({ name, genre, start, end, src, slug, day }) {
       viewport={{ once: true }}
       className="min-w-fit snap-start rounded-lg overflow-hidden relative mb-10"
     >
-      <Link href={`/band/${slug}`} key={slug}>
+      <Link href={`/band/${slug}`} key={slug} aria-label="læs mere">
         {src && src.startsWith("http") ? (
           <Image
             src={src}
             className="aspect-square object-cover mx-auto relative"
             width={300}
             height={300}
-            alt={`${slug} image`}
+            alt=""
           />
         ) : (
           <Image
@@ -37,7 +37,7 @@ function ActCard({ name, genre, start, end, src, slug, day }) {
             className="aspect-square object-cover mx-auto relativ"
             width={300}
             height={300}
-            alt={`${slug} image`}
+            alt=""
           />
         )}
         <div className="absolute inset-x-0 bottom-0 pt-40 pl-2 bg-gradient-to-t from-fooGrey-800 to-transparent-200">
