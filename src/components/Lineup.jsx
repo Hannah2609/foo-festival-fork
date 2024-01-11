@@ -51,7 +51,7 @@ function Lineup() {
               className={`flex flex-wrap gap-5 mb-10 mt-10 lg:m-10 justify-center items-baseline uppercase font-semibold	`}
             >
               {names.slice(0, 30).map((band, index) => (
-                <Link href={`/band/${band.slug}`} key={band.slug}>
+               
                   <li
                     key={band.slug}
                     className={
@@ -61,10 +61,11 @@ function Lineup() {
                         ? "text-xl lg:text-3xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
                         : "text-sm lg:text-xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
                     }
-                  >
+                  > <Link href={`/band/${band.slug}`} key={band.slug}>
                     {band.name}
+                    </Link>
                   </li>
-                </Link>
+                
               ))}
             </ol>
 

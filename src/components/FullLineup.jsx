@@ -6,7 +6,6 @@ import LoadingAnimation from "./LoadingAnimation";
 import { Bebas_Neue } from "next/font/google";
 import { motion } from "framer-motion";
 
-
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
   weight: "400",
@@ -14,18 +13,17 @@ const bebasNeue = Bebas_Neue({
 });
 
 function FullLineup() {
+  const [names, setNames] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-    const [names, setNames] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-      fetch("https://robust-ionized-tartan.glitch.me/bands")
-        .then((res) => res.json())
-        .then((data) => {
-          setNames(data);
-          setIsLoading(false);
-        });
-    }, []);
+  useEffect(() => {
+    fetch("https://robust-ionized-tartan.glitch.me/bands")
+      .then((res) => res.json())
+      .then((data) => {
+        setNames(data);
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
     <>
@@ -44,22 +42,23 @@ function FullLineup() {
             className={`flex flex-wrap gap-5 mb-10 mt-10 lg:m-10 justify-center items-baseline uppercase 	`}
           >
             {names.map((band, index) => (
-              <Link href={`/band/${band.slug}`} key={band.slug}>
-                <li
-                  key={band.slug}
-                  className={
-                    index < 17
-                      ? "text-3xl lg:text-6xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer font-semibold	"
-                      : index < 36
-                      ? "text-xl lg:text-4xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	font-semibold"
-                      : index < 62
-                      ? "text-base lg:text-2xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer"
-                      : "text-xs lg:text-base transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer"
-                  }
-                >
+              <li
+                key={band.slug}
+                className={
+                  index < 17
+                    ? "text-3xl lg:text-6xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer font-semibold	"
+                    : index < 36
+                    ? "text-xl lg:text-4xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	font-semibold"
+                    : index < 62
+                    ? "text-base lg:text-2xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer"
+                    : "text-xs lg:text-base transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer"
+                }
+              >
+                {" "}
+                <Link href={`/band/${band.slug}`} key={band.slug}>
                   {band.name}
-                </li>
-              </Link>
+                </Link>
+              </li>
             ))}
           </ol>
         </motion.section>
@@ -68,5 +67,4 @@ function FullLineup() {
   );
 }
 
-
-export default FullLineup
+export default FullLineup;
