@@ -40,14 +40,14 @@ function NavBar() {
                       src="/closing.svg"
                       width={30}
                       height={30}
-                      alt="logo"
+                      alt="close hamburger menu"
                     />
                   ) : (
                     <Image
                       src="/hamburger.svg"
                       width={40}
                       height={40}
-                      alt="logo"
+                      alt="hamburger menu"
                       className="focus:border-none active:border-none"
                     />
                   )}

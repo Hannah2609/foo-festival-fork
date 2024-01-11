@@ -56,7 +56,7 @@ function Program({ newArray, days }) {
             {days.map((day) => (
               <button
                 key={day}
-                className={`text-xl px-4 p-1 w-20 rounded-full bg-fooPink-900 md:text-2xl md:p-2 lg:w-40 lg:text-2xl uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110  hover:bg-fooPink-800 duration-300 cursor-pointer focus:bg-fooPink-800 focus:text-black`}
+                className={`text-xl px-4 p-1 w-20 rounded-full bg-fooPink-800 md:text-2xl md:p-2 lg:w-40 lg:text-2xl uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110  hover:bg-fooPink-900 duration-300 cursor-pointer focus:bg-fooPink-900 focus:text-black`}
                 onClick={() => filterActsByDay(day)}
               >
                 {day}
@@ -64,7 +64,7 @@ function Program({ newArray, days }) {
             ))}
           </div>
           <section>
-            <motion.h3
+            <motion.h2
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 2 }}
@@ -72,7 +72,7 @@ function Program({ newArray, days }) {
               className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
             >
               Midgard
-            </motion.h3>
+            </motion.h2>
             <div className="flex gap-8 overflow-x-scroll  mb-20 snap-mandatory snap-x">
               {/* Vi mapper med sortedByTime istedet for newArray (filtreringen sker i sortedByTime istedt for her) */}
               {sortedByTime("Midgard").map((act) => (
@@ -89,7 +89,7 @@ function Program({ newArray, days }) {
               ))}
             </div>
 
-            <motion.h3
+            <motion.h2
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1 }}
@@ -97,7 +97,7 @@ function Program({ newArray, days }) {
               className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
             >
               Vanaheim
-            </motion.h3>
+            </motion.h2>
             <div className="flex gap-8 overflow-x-scroll mb-20 snap-mandatory snap-x">
               {sortedByTime("Vanaheim").map((act) => (
                 <ActCard
@@ -113,7 +113,7 @@ function Program({ newArray, days }) {
               ))}
             </div>
 
-            <motion.h3
+            <motion.h2
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1 }}
@@ -121,7 +121,7 @@ function Program({ newArray, days }) {
               className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
             >
               Jotunheim
-            </motion.h3>
+            </motion.h2>
             <div className="flex gap-8 overflow-x-scroll mb-20 snap-mandatory snap-x">
               {sortedByTime("Jotunheim").map((act) => (
                 <ActCard

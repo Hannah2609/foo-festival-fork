@@ -29,7 +29,7 @@ function Billet() {
           href={"https://foo-shop-katjakroghs-projects.vercel.app/"}
           target="_blank"
         >
-          <button className="bg-fooPink-900 font-medium p-4 rounded-full w-full uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-800 duration-300 cursor-pointer">
+          <button className="bg-fooPink-800 font-medium p-4 rounded-full w-full uppercase transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-900 duration-300 cursor-pointer">
             Køb din billet
           </button>
         </Link>

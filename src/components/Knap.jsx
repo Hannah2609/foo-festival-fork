@@ -13,7 +13,7 @@ function Knap() {
             height={100}
             sizes="(max-width: 768px) 40px, (max-width: 1200px) 90px, 100px"
             className="absolute left-8 bottom-7"
-            alt="Årets program"
+            alt="Årets program svg"
           />
           <p className={`text-base font-medium md:text-lg lg:text-xl uppercase`}>
             Se årets program
@@ -28,7 +28,7 @@ function Knap() {
           width={110}
           height={110}
           className="absolute left-8 bottom-9"
-          alt="Camping"
+          alt="Camping svg"
         />
         <p className={`text-base font-medium md:text-lg lg:text-xl uppercase`}>
           Camping på foofest
@@ -41,7 +41,7 @@ function Knap() {
           width={90}
           height={90}
           className="absolute left-8 bottom-9"
-          alt="Frivillig på foo"
+          alt="Frivillig på foo svg"
         />
         <p className={`text-base font-medium md:text-lg lg:text-xl uppercase`}>
           Bliv foo - frivillig

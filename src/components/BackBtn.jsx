@@ -7,7 +7,7 @@ export default function BackBtn() {
 
   return (
     <button
-      className="sm:rounded-full sm:p-1 sm:bg-fooPink-900 sm:w-max"
+      className="sm:rounded-full sm:p-1 sm:bg-fooPink-800 sm:hover:bg-fooPink-900 sm:w-max"
       type="button"
       onClick={() => router.back()}
     >
