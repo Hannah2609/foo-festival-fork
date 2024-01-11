@@ -51,33 +51,35 @@ function Lineup() {
               className={`flex flex-wrap gap-5 mb-10 mt-10 lg:m-10 justify-center items-baseline uppercase font-semibold	`}
             >
               {names.slice(0, 30).map((band, index) => (
-               
-                  <li
-                    key={band.slug}
-                    className={
-                      index < 6
-                        ? "text-3xl lg:text-5xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
-                        : index < 16
-                        ? "text-xl lg:text-3xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
-                        : "text-sm lg:text-xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
-                    }
-                  > <Link href={`/band/${band.slug}`} key={band.slug}>
+                <li
+                  key={band.slug}
+                  className={
+                    index < 6
+                      ? "text-3xl lg:text-5xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
+                      : index < 16
+                      ? "text-xl lg:text-3xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
+                      : "text-sm lg:text-xl transition ease-in-out hover:-translate-y-1 hover:text-fooPink-900 duration-300 cursor-pointer	"
+                  }
+                >
+                  {" "}
+                  <Link href={`/band/${band.slug}`} key={band.slug}>
                     {band.name}
-                    </Link>
-                  </li>
-                
+                  </Link>
+                </li>
               ))}
             </ol>
 
             <h2 className="text-center uppercase font-medium text-sm">
               Og mange flere...
             </h2>
-            
           </motion.div>
 
           <div className="flex justify-center mt-40">
             <Link href={"/lineup"}>
-              <button className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-800 duration-300 cursor-pointer">
+              <button
+                className="flex items-end relative bg-fooGrey-900 pr-10 pl-40 py-8 gap-4 rounded-full max-w-fit transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-fooPink-800 duration-300 cursor-pointer"
+                aria-label="go to Lineup"
+              >
                 <Image
                   src={"/singer.svg"}
                   width={100}
@@ -91,7 +93,7 @@ function Lineup() {
                 >
                   Se hele lineuppet
                 </p>
-                <Image src={"/pil.svg"} width={40} height={40} alt="arrow" />
+                <Image src={"/pil.svg"} width={40} height={40} alt="" />
               </button>
             </Link>
           </div>
