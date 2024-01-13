@@ -11,7 +11,7 @@ const bebasNeue = Bebas_Neue({
   display: "swap",
 });
 
-function Program({ newArray, days }) {
+function Program({ newArray, days, scenes }) {
   const [selectedDay, setSelectedDay] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
@@ -63,79 +63,37 @@ function Program({ newArray, days }) {
               </button>
             ))}
           </div>
+          {/* Katja rettelse: Forkortet kode ved at mappe ud på "scenes" */}
           <section>
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 2 }}
-              viewport={{ once: true }}
-              className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
-            >
-              Midgard
-            </motion.h2>
-            <div className="flex gap-8 overflow-x-scroll  mb-20 snap-mandatory snap-x">
-              {/* Vi mapper med sortedByTime istedet for newArray (filtreringen sker i sortedByTime istedt for her) */}
-              {sortedByTime("Midgard").map((act) => (
-                <ActCard
-                  slug={act.slug}
-                  src={act.logo}
-                  key={act.name}
-                  name={act.name}
-                  genre={act.genre}
-                  start={act.eventInfo.start}
-                  end={act.eventInfo.end}
-                  day={act.day}
-                />
-              ))}
-            </div>
-
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
-            >
-              Vanaheim
-            </motion.h2>
-            <div className="flex gap-8 overflow-x-scroll mb-20 snap-mandatory snap-x">
-              {sortedByTime("Vanaheim").map((act) => (
-                <ActCard
-                  slug={act.slug}
-                  src={act.logo}
-                  key={act.name}
-                  name={act.name}
-                  genre={act.genre}
-                  start={act.eventInfo.start}
-                  end={act.eventInfo.end}
-                  day={act.day}
-                />
-              ))}
-            </div>
-
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
-            >
-              Jotunheim
-            </motion.h2>
-            <div className="flex gap-8 overflow-x-scroll mb-20 snap-mandatory snap-x">
-              {sortedByTime("Jotunheim").map((act) => (
-                <ActCard
-                  slug={act.slug}
-                  src={act.logo}
-                  key={act.name}
-                  name={act.name}
-                  genre={act.genre}
-                  start={act.eventInfo.start}
-                  end={act.eventInfo.end}
-                  day={act.day}
-                />
-              ))}
-            </div>
+            {scenes.map((scene) => (
+              <>
+                <div key={scene}>
+                  <motion.h2
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    viewport={{ once: true }}
+                    className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
+                  >
+                    {scene}
+                  </motion.h2>
+                </div>
+                <div className="flex gap-8 overflow-x-scroll mb-20 snap-mandatory snap-x">
+                  {sortedByTime(scene).map((act) => (
+                    <ActCard
+                      slug={act.slug}
+                      src={act.logo}
+                      key={act.name}
+                      name={act.name}
+                      genre={act.genre}
+                      start={act.eventInfo.start}
+                      end={act.eventInfo.end}
+                      day={act.day}
+                    />
+                  ))}
+                </div>
+              </>
+            ))}
           </section>
         </div>
       )}

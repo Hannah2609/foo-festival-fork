@@ -1,6 +1,6 @@
 import React from "react";
 import Program from "../../components/Program";
-import Footer from "../../components/Footer"
+import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { Bebas_Neue } from "next/font/google";
 
@@ -13,7 +13,6 @@ const bebasNeue = Bebas_Neue({
 export const metadata = {
   title: "FooFest | Program",
 };
-
 
 async function ProgramPage() {
   // Jonas har hjulpet med denne kodedel, hvor vi merger de to links sammen
@@ -53,8 +52,7 @@ async function ProgramPage() {
         >
           Program
         </h1>
-
-        <Program newArray={merged} days={days} />
+        <Program newArray={merged} days={days} scenes={scenes}/>
       </main>
       <Footer />
     </>
