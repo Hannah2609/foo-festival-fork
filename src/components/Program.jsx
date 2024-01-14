@@ -21,7 +21,7 @@ function Program({ newArray, days }) {
     const today = new Date()
       .toLocaleDateString("en", { weekday: "short" })
       .toLowerCase();
-    setSelectedDay(today);
+    // setSelectedDay(today);
 
     // Loading Animation
     if (newArray) {
@@ -49,18 +49,37 @@ function Program({ newArray, days }) {
 
   
    const filteredActs = (scene) => {
+   const dayOrder = [
+     "mon",
+     "tue",
+     "wed",
+     "thu",
+     "fri",
+     "sat",
+     "sun",
+   ];
+
      return newArray
-       .filter(
-         (act) =>
+       .filter((act) => {
+      const chosenDay = selectedDay === "" || act.day === selectedDay;
+
+         return (
            act.name.toLowerCase().startsWith(search.toLowerCase()) &&
            act.scene === scene &&
-            act.day === selectedDay
-      )
+           chosenDay
+         );
+       })
        .sort((a, b) => {
+         const dayIndexA = dayOrder.indexOf(a.day);
+         const dayIndexB = dayOrder.indexOf(b.day);
+         
          const aTime = new Date(`1970-01-01T${a.eventInfo.start}`);
          const bTime = new Date(`1970-01-01T${b.eventInfo.start}`);
 
-         return aTime.getTime() - bTime.getTime();
+         // sorterer på dage og tidsrækkefølge
+          return dayIndexA !== dayIndexB
+            ? dayIndexA - dayIndexB
+            : aTime.getTime() - bTime.getTime();
        });
    };
 
@@ -70,7 +89,7 @@ function Program({ newArray, days }) {
         <LoadingAnimation />
       ) : (
         <div>
-          <div className="flex justify-center flex-wrap my-8 mb-20 gap-5">
+          <div className="flex justify-center flex-wrap my-8 mb-10 lg:mb-20 gap-5">
             {days.map((day) => (
               <button
                 key={day}
@@ -83,7 +102,7 @@ function Program({ newArray, days }) {
           </div>
 
           <section>
-            <div className="flex w-full justify-between">
+            <div className="flex w-full flex-col-reverse gap-10 lg:flex-row lg:gap-0 lg:justify-between">
               <motion.h2
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -93,13 +112,13 @@ function Program({ newArray, days }) {
               >
                 Midgard
               </motion.h2>
-              <div>
+              <div className="place-self-center lg:place-self-start">
                 <input
                   type="text"
                   placeholder="Søg efter en kunstner"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="px-8 py-2 border-2 bg-black border-fooPink-800 text-fooGrey-200 placeholder-fooGrey-200 rounded-full"
+                  className="px-8 py-2 border-2  bg-black border-fooPink-800 text-fooGrey-200 placeholder-fooGrey-200 rounded-full"
                 />
               </div>
             </div>
