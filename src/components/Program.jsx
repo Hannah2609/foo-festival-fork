@@ -14,6 +14,7 @@ const bebasNeue = Bebas_Neue({
 function Program({ newArray, days }) {
   const [selectedDay, setSelectedDay] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   // useEffect bruges her, så hver gang siden indlæses, så vises de artister der spiller idag, så der ikke bare er en blank side
   useEffect(() => {
@@ -35,16 +36,33 @@ function Program({ newArray, days }) {
 
   // Funktionen starter med at filtrerer ud fra scene og dag
   // Sorterer herefter "acts" ud fra sammenlignign af starttidspunkterne
-  const sortedByTime = (scene) => {
-    return newArray
-      .filter((act) => act.scene === scene && act.day === selectedDay)
-      .sort((a, b) => {
-        const aTime = new Date(`1970-01-01T${a.eventInfo.start}`);
-        const bTime = new Date(`1970-01-01T${b.eventInfo.start}`);
+  // const sortedByTime = (scene) => {
+  //   return newArray
+  //     .filter((act) => act.scene === scene && act.day === selectedDay)
+  //     .sort((a, b) => {
+  //       const aTime = new Date(`1970-01-01T${a.eventInfo.start}`);
+  //       const bTime = new Date(`1970-01-01T${b.eventInfo.start}`);
 
-        return aTime.getTime() - bTime.getTime();
-      });
-  };
+  //       return aTime.getTime() - bTime.getTime();
+  //     });
+  // };
+
+  
+   const filteredActs = (scene) => {
+     return newArray
+       .filter(
+         (act) =>
+           act.name.toLowerCase().startsWith(search.toLowerCase()) &&
+           act.scene === scene &&
+            act.day === selectedDay
+      )
+       .sort((a, b) => {
+         const aTime = new Date(`1970-01-01T${a.eventInfo.start}`);
+         const bTime = new Date(`1970-01-01T${b.eventInfo.start}`);
+
+         return aTime.getTime() - bTime.getTime();
+       });
+   };
 
   return (
     <>
@@ -63,19 +81,33 @@ function Program({ newArray, days }) {
               </button>
             ))}
           </div>
+
           <section>
-            <motion.h2
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 2 }}
-              viewport={{ once: true }}
-              className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
-            >
-              Midgard
-            </motion.h2>
+            <div className="flex w-full justify-between">
+              <motion.h2
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 2 }}
+                viewport={{ once: true }}
+                className={`text-4xl ${bebasNeue.className} lg:text-5xl xl:text-6xl mb-5 text-fooYellow-200`}
+              >
+                Midgard
+              </motion.h2>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Søg efter en kunstner"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="px-8 py-2 border-2 bg-black border-fooPink-800 text-fooGrey-200 placeholder-fooGrey-200 rounded-full"
+                />
+              </div>
+            </div>
+
             <div className="flex gap-8 overflow-x-scroll  mb-20 snap-mandatory snap-x">
               {/* Vi mapper med sortedByTime istedet for newArray (filtreringen sker i sortedByTime istedt for her) */}
-              {sortedByTime("Midgard").map((act) => (
+              {/* Senere ændret til FilteredActs */}
+              {filteredActs("Midgard").map((act) => (
                 <ActCard
                   slug={act.slug}
                   src={act.logo}
@@ -99,7 +131,7 @@ function Program({ newArray, days }) {
               Vanaheim
             </motion.h2>
             <div className="flex gap-8 overflow-x-scroll mb-20 snap-mandatory snap-x">
-              {sortedByTime("Vanaheim").map((act) => (
+              {filteredActs("Vanaheim").map((act) => (
                 <ActCard
                   slug={act.slug}
                   src={act.logo}
@@ -123,7 +155,7 @@ function Program({ newArray, days }) {
               Jotunheim
             </motion.h2>
             <div className="flex gap-8 overflow-x-scroll mb-20 snap-mandatory snap-x">
-              {sortedByTime("Jotunheim").map((act) => (
+              {filteredActs("Jotunheim").map((act) => (
                 <ActCard
                   slug={act.slug}
                   src={act.logo}
